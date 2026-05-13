@@ -3,136 +3,459 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Guilherme Brito – Portfólio</title>
-  <style>
-    body {
-      background-color: #000;
-      color: #fff;
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-
-    header {
-      background-color: #111;
-      padding: 2rem;
-      text-align: center;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-    }
-
-    header p {
-      font-size: 1.2rem;
-      margin: 0.5rem 0;
-    }
-
-    .container {
-      max-width: 800px;
-      margin: 2rem auto;
-      padding: 1rem;
-    }
-
-    h2 {
-      color: #ccc;
-      border-bottom: 1px solid #444;
-      padding-bottom: 0.5rem;
-    }
-
-    .project, .contact {
-      margin-bottom: 1.5rem;
-    }
-
-    a {
-      color: #0ff;
-      text-decoration: none;
-    }
-
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background-color: #111;
-      font-size: 0.9rem;
-      color: #777;
-    }
-  </style>
+  <title>Guilherme Brito – Software Engineer</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Google Fonts: Syne (display) + JetBrains Mono (code feel) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <!-- Devicons for tech icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/devicons/1.8.0/css/devicons.min.css"/>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 </head>
 <body>
 
-  <header>
-    <h1>Guilherme Brito Andrade</h1>
-    <p>18 anos | Estudante de Engenharia de Software – CEUB</p>
-    <p>Apaixonado por tecnologia, futebol, música e aprender coisas novas.</p>
-  </header>
-
-  <div class="container">
-    <section>
-      <h2>Meus Repositórios</h2>
-
-      <div class="project">
-        <strong>LOGIC – Lógica de Programação</strong><br />
-        <a href="https://github.com/guiandrade17/LOGIC" target="_blank">
-          github.com/guiandrade17/LOGIC
-        </a>
-        <p>
-          Atividades em C# com aplicações Console e API Web.  
-          Estudo de lógica de programação, estruturas condicionais, laços de repetição e boas práticas.
-        </p>
-      </div>
-
-      <div class="project">
-        <strong>HTML, CSS e JavaScript</strong><br />
-        <p>
-          Desenvolvimento front-end com HTML, CSS e JavaScript.  
-          Realização de mais de <strong>60 exercícios práticos</strong> utilizando o <strong>Visual Studio Code</strong>,
-          focando em estruturação de páginas, estilização e interatividade.
-        </p>
-      </div>
-
-      <div class="project">
-        <strong>PYTHON – Programação Orientada a Objetos</strong><br />
-        <p>
-          Estudo de Python com foco em <strong>Programação Orientada a Objetos (POO)</strong>, incluindo classes,
-          atributos, métodos, encapsulamento e exercícios práticos desenvolvidos no <strong>PyCharm</strong>.
-        </p>
-      </div>
-
-      <div class="project">
-        <strong>BD – Banco de Dados (BD I e BD II)</strong><br />
-        <a href="https://github.com/guiandrade17/BD" target="_blank">
-          github.com/guiandrade17/BD
-        </a>
-        <p>
-          Scripts SQL, modelagem de dados e consultas em <strong>MySQL</strong>.  
-          Aprofundamento em Banco de Dados II, com estudo mais avançado dos conteúdos,
-          explorando diferentes modelos de dados e comparações entre eles.
-        </p>
-      </div>
-
-      <div class="project">
-        <strong>JAVA – Java Básico</strong><br />
-        <a href="https://github.com/guiandrade17/JAVA" target="_blank">
-          github.com/guiandrade17/JAVA
-        </a>
-        <p>
-          Exercícios e conceitos fundamentais de Java aprendidos no curso do DCE,
-          incluindo sintaxe básica, lógica e orientação a objetos.
-        </p>
-      </div>
-    </section>
-
-    <section class="contact">
-      <h2>Contato</h2>
-      <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/guilherme-brito-andrade-090b81348" target="_blank">guilherme-brito-andrade</a></p>
-      <p><strong>Instagram:</strong> <a href="https://instagram.com/guilhermebritoa" target="_blank">@guilhermebritoa</a></p>
-      <p><strong>Email:</strong> <a href="mailto:guilhermebritoandrade17@gmail.com">guilhermebritoandrade17@gmail.com</a></p>
-    </section>
+  <!-- ============================================================
+       LOADER
+  ============================================================ -->
+  <div id="loader">
+    <div class="loader-inner">
+      <div class="loader-ring"></div>
+      <div class="loader-ring"></div>
+      <div class="loader-ring"></div>
+      <span class="loader-text">GB_</span>
+    </div>
   </div>
 
-  <footer>
-    © 2026 Guilherme Brito – Portfólio criado com GitHub Pages
+  <!-- ============================================================
+       CANVAS – PARTICLE BACKGROUND
+  ============================================================ -->
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- ============================================================
+       NAVBAR
+  ============================================================ -->
+  <nav id="navbar">
+    <div class="nav-logo">
+      <span class="logo-bracket">&lt;</span>GB<span class="logo-bracket">/&gt;</span>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#home" class="nav-link">Home</a></li>
+      <li><a href="#sobre" class="nav-link">Sobre</a></li>
+      <li><a href="#tecnologias" class="nav-link">Tecnologias</a></li>
+      <li><a href="#projetos" class="nav-link">Projetos</a></li>
+      <li><a href="#contato" class="nav-link">Contato</a></li>
+    </ul>
+  </nav>
+
+  <!-- ============================================================
+       SECTION: HOME
+  ============================================================ -->
+  <section id="home">
+    <div class="home-content">
+      <!-- Avatar / Glitch Frame -->
+      <div class="avatar-wrapper reveal">
+        <div class="avatar-frame">
+          <div class="avatar-initials">GB</div>
+          <div class="avatar-ring r1"></div>
+          <div class="avatar-ring r2"></div>
+          <div class="avatar-ring r3"></div>
+        </div>
+      </div>
+
+      <div class="home-text reveal">
+        <p class="home-greeting">// Olá, mundo! 👋</p>
+        <h1 class="home-name">Guilherme<br><span class="accent">Brito</span></h1>
+        <p class="home-role">
+          <span class="typing-prefix">$ </span>
+          <span id="typed-text"></span><span class="cursor">|</span>
+        </p>
+        <p class="home-sub">
+          Estudante de <span class="accent">Engenharia de Software</span> no CEUB · 18 anos ·<br>
+          Apaixonado por código, futebol e aprender coisas novas.
+        </p>
+        <div class="home-cta">
+          <a href="https://github.com/guiandrade17" target="_blank" class="btn btn-primary">
+            <i class="fab fa-github"></i> GitHub
+          </a>
+          <a href="https://linkedin.com/in/guilherme-brito-andrade-090b81348" target="_blank" class="btn btn-outline">
+            <i class="fab fa-linkedin"></i> LinkedIn
+          </a>
+          <a href="#contato" class="btn btn-ghost">
+            <i class="fas fa-envelope"></i> Contato
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="scroll-indicator">
+      <span>scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION: SOBRE
+  ============================================================ -->
+  <section id="sobre">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">// 01</span>
+        <h2>Sobre <span class="accent">Mim</span></h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="sobre-grid">
+        <div class="sobre-text reveal">
+          <p>
+            Sou um estudante de <strong>Engenharia de Software</strong> no <strong>CEUB (Centro Universitário de Brasília)</strong>, com foco em construir soluções tecnológicas eficientes e bem estruturadas.
+          </p>
+          <p>
+            Minha jornada na programação começou com curiosidade e se transformou em paixão. Hoje trabalho com diversas tecnologias — de lógica básica em C# a bancos de dados relacionais e desenvolvimento front-end.
+          </p>
+          <p>
+            Meu objetivo é me tornar um <strong>Engenheiro de Software</strong> completo, capaz de construir sistemas robustos, escaláveis e com excelente experiência de usuário.
+          </p>
+
+          <div class="info-chips">
+            <span class="chip"><i class="fas fa-graduation-cap"></i> CEUB – Eng. Software</span>
+            <span class="chip"><i class="fas fa-map-marker-alt"></i> Brasília, DF</span>
+            <span class="chip"><i class="fas fa-code"></i> Open to opportunities</span>
+          </div>
+        </div>
+
+        <div class="sobre-stats reveal">
+          <div class="stat-card">
+            <span class="stat-number">5<span class="accent">+</span></span>
+            <span class="stat-label">Linguagens</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">60<span class="accent">+</span></span>
+            <span class="stat-label">Exercícios Front-end</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">4<span class="accent">+</span></span>
+            <span class="stat-label">Repositórios</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">1<span class="accent">st</span></span>
+            <span class="stat-label">Ano na Faculdade</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION: TECNOLOGIAS
+  ============================================================ -->
+  <section id="tecnologias">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">// 02</span>
+        <h2>Tech <span class="accent">Stack</span></h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="tech-grid reveal">
+
+        <div class="tech-card" data-skill="85">
+          <div class="tech-icon-wrap html">
+            <i class="fab fa-html5"></i>
+          </div>
+          <span class="tech-name">HTML5</span>
+          <div class="tech-bar"><div class="tech-fill" data-w="85"></div></div>
+        </div>
+
+        <div class="tech-card" data-skill="80">
+          <div class="tech-icon-wrap css">
+            <i class="fab fa-css3-alt"></i>
+          </div>
+          <span class="tech-name">CSS3</span>
+          <div class="tech-bar"><div class="tech-fill" data-w="80"></div></div>
+        </div>
+
+        <div class="tech-card" data-skill="70">
+          <div class="tech-icon-wrap js">
+            <i class="fab fa-js-square"></i>
+          </div>
+          <span class="tech-name">JavaScript</span>
+          <div class="tech-bar"><div class="tech-fill" data-w="70"></div></div>
+        </div>
+
+        <div class="tech-card" data-skill="65">
+          <div class="tech-icon-wrap python">
+            <i class="fab fa-python"></i>
+          </div>
+          <span class="tech-name">Python</span>
+          <div class="tech-bar"><div class="tech-fill" data-w="65"></div></div>
+        </div>
+
+        <div class="tech-card" data-skill="60">
+          <div class="tech-icon-wrap java">
+            <i class="fab fa-java"></i>
+          </div>
+          <span class="tech-name">Java</span>
+          <div class="tech-bar"><div class="tech-fill" data-w="60"></div></div>
+        </div>
+
+        <div class="tech-card" data-skill="70">
+          <div class="tech-icon-wrap csharp">
+            <i class="fas fa-code"></i>
+          </div>
+          <span class="tech-name">C#</span>
+          <div class="tech-bar"><div class="tech-fill" data-w="70"></div></div>
+        </div>
+
+        <div class="tech-card" data-skill="75">
+          <div class="tech-icon-wrap sql">
+            <i class="fas fa-database"></i>
+          </div>
+          <span class="tech-name">SQL</span>
+          <div class="tech-bar"><div class="tech-fill" data-w="75"></div></div>
+        </div>
+
+        <div class="tech-card" data-skill="72">
+          <div class="tech-icon-wrap git">
+            <i class="fab fa-git-alt"></i>
+          </div>
+          <span class="tech-name">Git / GitHub</span>
+          <div class="tech-bar"><div class="tech-fill" data-w="72"></div></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION: PROJETOS
+  ============================================================ -->
+  <section id="projetos">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">// 03</span>
+        <h2>Meus <span class="accent">Projetos</span></h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="projects-grid">
+
+        <!-- Card 1: LOGIC -->
+        <div class="project-card reveal">
+          <div class="card-header">
+            <div class="card-icon"><i class="fas fa-terminal"></i></div>
+            <div class="card-links">
+              <a href="https://github.com/guiandrade17/LOGIC" target="_blank" title="GitHub">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+          </div>
+          <h3 class="card-title">LOGIC</h3>
+          <p class="card-description">
+            Estudo de lógica de programação com aplicações Console e API Web em C#. Inclui estruturas condicionais, laços de repetição e boas práticas de código.
+          </p>
+          <div class="card-tags">
+            <span class="tag csharp-tag">C#</span>
+            <span class="tag">.NET</span>
+            <span class="tag">Console App</span>
+            <span class="tag">API Web</span>
+          </div>
+          <a href="https://github.com/guiandrade17/LOGIC" target="_blank" class="card-btn">
+            Ver no GitHub <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <!-- Card 2: JAVA -->
+        <div class="project-card reveal">
+          <div class="card-header">
+            <div class="card-icon java-icon"><i class="fab fa-java"></i></div>
+            <div class="card-links">
+              <a href="https://github.com/guiandrade17/JAVA" target="_blank" title="GitHub">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+          </div>
+          <h3 class="card-title">JAVA</h3>
+          <p class="card-description">
+            Exercícios e conceitos fundamentais de Java: sintaxe básica, lógica, orientação a objetos e atividades práticas do curso do DCE.
+          </p>
+          <div class="card-tags">
+            <span class="tag java-tag">Java</span>
+            <span class="tag">OOP</span>
+            <span class="tag">DCE</span>
+          </div>
+          <a href="https://github.com/guiandrade17/JAVA" target="_blank" class="card-btn">
+            Ver no GitHub <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <!-- Card 3: BD -->
+        <div class="project-card reveal">
+          <div class="card-header">
+            <div class="card-icon db-icon"><i class="fas fa-database"></i></div>
+            <div class="card-links">
+              <a href="https://github.com/guiandrade17/BD" target="_blank" title="GitHub">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+          </div>
+          <h3 class="card-title">BD – Banco de Dados</h3>
+          <p class="card-description">
+            Scripts SQL, modelagem de dados e consultas em MySQL. BD I e BD II com estudo avançado de modelos e comparações entre sistemas de dados.
+          </p>
+          <div class="card-tags">
+            <span class="tag sql-tag">SQL</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">Modelagem</span>
+            <span class="tag">BD I & II</span>
+          </div>
+          <a href="https://github.com/guiandrade17/BD" target="_blank" class="card-btn">
+            Ver no GitHub <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <!-- Card 4: PYTHON -->
+        <div class="project-card reveal">
+          <div class="card-header">
+            <div class="card-icon py-icon"><i class="fab fa-python"></i></div>
+            <div class="card-links">
+              <a href="https://github.com/guiandrade17" target="_blank" title="GitHub">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+          </div>
+          <h3 class="card-title">PYTHON – POO</h3>
+          <p class="card-description">
+            Python com foco em Programação Orientada a Objetos: classes, atributos, métodos, encapsulamento e exercícios práticos desenvolvidos no PyCharm.
+          </p>
+          <div class="card-tags">
+            <span class="tag py-tag">Python</span>
+            <span class="tag">POO</span>
+            <span class="tag">PyCharm</span>
+          </div>
+          <a href="https://github.com/guiandrade17" target="_blank" class="card-btn">
+            Ver no GitHub <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <!-- Card 5: Front-end -->
+        <div class="project-card reveal featured">
+          <div class="card-featured-badge">⭐ Destaque</div>
+          <div class="card-header">
+            <div class="card-icon fe-icon"><i class="fas fa-paint-brush"></i></div>
+            <div class="card-links">
+              <a href="https://github.com/guiandrade17" target="_blank" title="GitHub">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+          </div>
+          <h3 class="card-title">Front-end Projects</h3>
+          <p class="card-description">
+            Mais de 60 exercícios práticos de HTML, CSS e JavaScript no VS Code. Estruturação de páginas, estilização avançada e interatividade dinâmica.
+          </p>
+          <div class="card-tags">
+            <span class="tag html-tag">HTML5</span>
+            <span class="tag css-tag">CSS3</span>
+            <span class="tag js-tag">JavaScript</span>
+            <span class="tag">VS Code</span>
+          </div>
+          <a href="https://github.com/guiandrade17" target="_blank" class="card-btn">
+            Ver no GitHub <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION: CONTATO
+  ============================================================ -->
+  <section id="contato">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">// 04</span>
+        <h2>Entre em <span class="accent">Contato</span></h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="contato-grid">
+        <div class="contato-text reveal">
+          <h3>Vamos conversar?</h3>
+          <p>
+            Estou aberto a oportunidades de estágio, projetos colaborativos e novas conexões na área de tecnologia. Não hesite em entrar em contato!
+          </p>
+          <p class="contato-code">
+            <span class="code-keyword">const</span> guilherme = {<br>
+            &nbsp;&nbsp;<span class="code-key">status:</span> <span class="code-str">"disponível"</span>,<br>
+            &nbsp;&nbsp;<span class="code-key">open_to:</span> <span class="code-str">"estágios & projetos"</span>,<br>
+            &nbsp;&nbsp;<span class="code-key">location:</span> <span class="code-str">"Brasília, DF"</span><br>
+            };
+          </p>
+        </div>
+
+        <div class="contato-links reveal">
+          <a href="https://linkedin.com/in/guilherme-brito-andrade-090b81348" target="_blank" class="contact-card linkedin">
+            <div class="contact-icon"><i class="fab fa-linkedin"></i></div>
+            <div class="contact-info">
+              <span class="contact-platform">LinkedIn</span>
+              <span class="contact-handle">guilherme-brito-andrade</span>
+            </div>
+            <i class="fas fa-external-link-alt contact-arrow"></i>
+          </a>
+
+          <a href="https://instagram.com/guilhermebritoa" target="_blank" class="contact-card instagram">
+            <div class="contact-icon"><i class="fab fa-instagram"></i></div>
+            <div class="contact-info">
+              <span class="contact-platform">Instagram</span>
+              <span class="contact-handle">@guilhermebritoa</span>
+            </div>
+            <i class="fas fa-external-link-alt contact-arrow"></i>
+          </a>
+
+          <a href="mailto:guilhermebritoandrade17@gmail.com" class="contact-card email">
+            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+            <div class="contact-info">
+              <span class="contact-platform">E-mail</span>
+              <span class="contact-handle">guilhermebritoandrade17@gmail.com</span>
+            </div>
+            <i class="fas fa-external-link-alt contact-arrow"></i>
+          </a>
+
+          <a href="https://github.com/guiandrade17" target="_blank" class="contact-card github">
+            <div class="contact-icon"><i class="fab fa-github"></i></div>
+            <div class="contact-info">
+              <span class="contact-platform">GitHub</span>
+              <span class="contact-handle">guiandrade17</span>
+            </div>
+            <i class="fas fa-external-link-alt contact-arrow"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer id="footer">
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <span class="logo-bracket">&lt;</span>GB<span class="logo-bracket">/&gt;</span>
+      </div>
+      <p class="footer-text">
+        Desenvolvido com <span class="accent">❤</span> por Guilherme Brito · © 2026
+      </p>
+      <p class="footer-sub">HTML · CSS · JavaScript · GitHub Pages</p>
+    </div>
+    <div class="footer-glow"></div>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
