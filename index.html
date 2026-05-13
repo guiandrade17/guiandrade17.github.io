@@ -5,20 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Guilherme Brito – Software Engineer</title>
   <link rel="stylesheet" href="style.css" />
-  <!-- Google Fonts: Syne (display) + JetBrains Mono (code feel) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
-  <!-- Devicons for tech icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/devicons/1.8.0/css/devicons.min.css"/>
-  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 </head>
 <body>
 
-  <!-- ============================================================
-       LOADER
-  ============================================================ -->
   <div id="loader">
     <div class="loader-inner">
       <div class="loader-ring"></div>
@@ -28,14 +22,8 @@
     </div>
   </div>
 
-  <!-- ============================================================
-       CANVAS – PARTICLE BACKGROUND
-  ============================================================ -->
   <canvas id="particles-canvas"></canvas>
 
-  <!-- ============================================================
-       NAVBAR
-  ============================================================ -->
   <nav id="navbar">
     <div class="nav-logo">
       <span class="logo-bracket">&lt;</span>GB<span class="logo-bracket">/&gt;</span>
@@ -52,15 +40,19 @@
     </ul>
   </nav>
 
-  <!-- ============================================================
-       SECTION: HOME
-  ============================================================ -->
   <section id="home">
     <div class="home-content">
-      <!-- Avatar / Glitch Frame -->
       <div class="avatar-wrapper reveal">
         <div class="avatar-frame">
-          <div class="avatar-initials">GB</div>
+          <div class="avatar-photo-wrap">
+            <img
+              src="Foto_-_Guilherme.png"
+              alt="Guilherme Brito Andrade"
+              class="avatar-photo"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+            />
+            <div class="avatar-initials" style="display:none;">GB</div>
+          </div>
           <div class="avatar-ring r1"></div>
           <div class="avatar-ring r2"></div>
           <div class="avatar-ring r3"></div>
@@ -92,16 +84,12 @@
       </div>
     </div>
 
-    <!-- Scroll indicator -->
     <div class="scroll-indicator">
       <span>scroll</span>
       <div class="scroll-line"></div>
     </div>
   </section>
 
-  <!-- ============================================================
-       SECTION: SOBRE
-  ============================================================ -->
   <section id="sobre">
     <div class="container">
       <div class="section-header reveal">
@@ -109,26 +97,17 @@
         <h2>Sobre <span class="accent">Mim</span></h2>
         <div class="section-line"></div>
       </div>
-
       <div class="sobre-grid">
         <div class="sobre-text reveal">
-          <p>
-            Sou um estudante de <strong>Engenharia de Software</strong> no <strong>CEUB (Centro Universitário de Brasília)</strong>, com foco em construir soluções tecnológicas eficientes e bem estruturadas.
-          </p>
-          <p>
-            Minha jornada na programação começou com curiosidade e se transformou em paixão. Hoje trabalho com diversas tecnologias — de lógica básica em C# a bancos de dados relacionais e desenvolvimento front-end.
-          </p>
-          <p>
-            Meu objetivo é me tornar um <strong>Engenheiro de Software</strong> completo, capaz de construir sistemas robustos, escaláveis e com excelente experiência de usuário.
-          </p>
-
+          <p>Sou um estudante de <strong>Engenharia de Software</strong> no <strong>CEUB (Centro Universitário de Brasília)</strong>, com foco em construir soluções tecnológicas eficientes e bem estruturadas.</p>
+          <p>Minha jornada na programação começou com curiosidade e se transformou em paixão. Hoje trabalho com diversas tecnologias — de lógica básica em C# a bancos de dados relacionais e desenvolvimento front-end.</p>
+          <p>Meu objetivo é me tornar um <strong>Engenheiro de Software</strong> completo, capaz de construir sistemas robustos, escaláveis e com excelente experiência de usuário.</p>
           <div class="info-chips">
             <span class="chip"><i class="fas fa-graduation-cap"></i> CEUB – Eng. Software</span>
             <span class="chip"><i class="fas fa-map-marker-alt"></i> Brasília, DF</span>
             <span class="chip"><i class="fas fa-code"></i> Open to opportunities</span>
           </div>
         </div>
-
         <div class="sobre-stats reveal">
           <div class="stat-card">
             <span class="stat-number">5<span class="accent">+</span></span>
@@ -151,9 +130,6 @@
     </div>
   </section>
 
-  <!-- ============================================================
-       SECTION: TECNOLOGIAS
-  ============================================================ -->
   <section id="tecnologias">
     <div class="container">
       <div class="section-header reveal">
@@ -161,80 +137,19 @@
         <h2>Tech <span class="accent">Stack</span></h2>
         <div class="section-line"></div>
       </div>
-
       <div class="tech-grid reveal">
-
-        <div class="tech-card" data-skill="85">
-          <div class="tech-icon-wrap html">
-            <i class="fab fa-html5"></i>
-          </div>
-          <span class="tech-name">HTML5</span>
-          <div class="tech-bar"><div class="tech-fill" data-w="85"></div></div>
-        </div>
-
-        <div class="tech-card" data-skill="80">
-          <div class="tech-icon-wrap css">
-            <i class="fab fa-css3-alt"></i>
-          </div>
-          <span class="tech-name">CSS3</span>
-          <div class="tech-bar"><div class="tech-fill" data-w="80"></div></div>
-        </div>
-
-        <div class="tech-card" data-skill="70">
-          <div class="tech-icon-wrap js">
-            <i class="fab fa-js-square"></i>
-          </div>
-          <span class="tech-name">JavaScript</span>
-          <div class="tech-bar"><div class="tech-fill" data-w="70"></div></div>
-        </div>
-
-        <div class="tech-card" data-skill="65">
-          <div class="tech-icon-wrap python">
-            <i class="fab fa-python"></i>
-          </div>
-          <span class="tech-name">Python</span>
-          <div class="tech-bar"><div class="tech-fill" data-w="65"></div></div>
-        </div>
-
-        <div class="tech-card" data-skill="60">
-          <div class="tech-icon-wrap java">
-            <i class="fab fa-java"></i>
-          </div>
-          <span class="tech-name">Java</span>
-          <div class="tech-bar"><div class="tech-fill" data-w="60"></div></div>
-        </div>
-
-        <div class="tech-card" data-skill="70">
-          <div class="tech-icon-wrap csharp">
-            <i class="fas fa-code"></i>
-          </div>
-          <span class="tech-name">C#</span>
-          <div class="tech-bar"><div class="tech-fill" data-w="70"></div></div>
-        </div>
-
-        <div class="tech-card" data-skill="75">
-          <div class="tech-icon-wrap sql">
-            <i class="fas fa-database"></i>
-          </div>
-          <span class="tech-name">SQL</span>
-          <div class="tech-bar"><div class="tech-fill" data-w="75"></div></div>
-        </div>
-
-        <div class="tech-card" data-skill="72">
-          <div class="tech-icon-wrap git">
-            <i class="fab fa-git-alt"></i>
-          </div>
-          <span class="tech-name">Git / GitHub</span>
-          <div class="tech-bar"><div class="tech-fill" data-w="72"></div></div>
-        </div>
-
+        <div class="tech-card"><div class="tech-icon-wrap html"><i class="fab fa-html5"></i></div><span class="tech-name">HTML5</span><div class="tech-bar"><div class="tech-fill" data-w="85"></div></div></div>
+        <div class="tech-card"><div class="tech-icon-wrap css"><i class="fab fa-css3-alt"></i></div><span class="tech-name">CSS3</span><div class="tech-bar"><div class="tech-fill" data-w="80"></div></div></div>
+        <div class="tech-card"><div class="tech-icon-wrap js"><i class="fab fa-js-square"></i></div><span class="tech-name">JavaScript</span><div class="tech-bar"><div class="tech-fill" data-w="70"></div></div></div>
+        <div class="tech-card"><div class="tech-icon-wrap python"><i class="fab fa-python"></i></div><span class="tech-name">Python</span><div class="tech-bar"><div class="tech-fill" data-w="65"></div></div></div>
+        <div class="tech-card"><div class="tech-icon-wrap java"><i class="fab fa-java"></i></div><span class="tech-name">Java</span><div class="tech-bar"><div class="tech-fill" data-w="60"></div></div></div>
+        <div class="tech-card"><div class="tech-icon-wrap csharp"><i class="fas fa-code"></i></div><span class="tech-name">C#</span><div class="tech-bar"><div class="tech-fill" data-w="70"></div></div></div>
+        <div class="tech-card"><div class="tech-icon-wrap sql"><i class="fas fa-database"></i></div><span class="tech-name">SQL</span><div class="tech-bar"><div class="tech-fill" data-w="75"></div></div></div>
+        <div class="tech-card"><div class="tech-icon-wrap git"><i class="fab fa-git-alt"></i></div><span class="tech-name">Git / GitHub</span><div class="tech-bar"><div class="tech-fill" data-w="72"></div></div></div>
       </div>
     </div>
   </section>
 
-  <!-- ============================================================
-       SECTION: PROJETOS
-  ============================================================ -->
   <section id="projetos">
     <div class="container">
       <div class="section-header reveal">
@@ -242,140 +157,78 @@
         <h2>Meus <span class="accent">Projetos</span></h2>
         <div class="section-line"></div>
       </div>
-
       <div class="projects-grid">
 
-        <!-- Card 1: LOGIC -->
         <div class="project-card reveal">
           <div class="card-header">
             <div class="card-icon"><i class="fas fa-terminal"></i></div>
-            <div class="card-links">
-              <a href="https://github.com/guiandrade17/LOGIC" target="_blank" title="GitHub">
-                <i class="fab fa-github"></i>
-              </a>
-            </div>
+            <div class="card-links"><a href="https://github.com/guiandrade17/LOGIC" target="_blank"><i class="fab fa-github"></i></a></div>
           </div>
           <h3 class="card-title">LOGIC</h3>
-          <p class="card-description">
-            Estudo de lógica de programação com aplicações Console e API Web em C#. Inclui estruturas condicionais, laços de repetição e boas práticas de código.
-          </p>
+          <p class="card-description">Estudo de lógica de programação com aplicações Console e API Web em C#. Inclui estruturas condicionais, laços de repetição e boas práticas de código.</p>
           <div class="card-tags">
-            <span class="tag csharp-tag">C#</span>
-            <span class="tag">.NET</span>
-            <span class="tag">Console App</span>
-            <span class="tag">API Web</span>
+            <span class="tag csharp-tag">C#</span><span class="tag">.NET</span><span class="tag">Console App</span><span class="tag">API Web</span>
           </div>
-          <a href="https://github.com/guiandrade17/LOGIC" target="_blank" class="card-btn">
-            Ver no GitHub <i class="fas fa-arrow-right"></i>
-          </a>
+          <a href="https://github.com/guiandrade17/LOGIC" target="_blank" class="card-btn">Ver no GitHub <i class="fas fa-arrow-right"></i></a>
         </div>
 
-        <!-- Card 2: JAVA -->
         <div class="project-card reveal">
           <div class="card-header">
             <div class="card-icon java-icon"><i class="fab fa-java"></i></div>
-            <div class="card-links">
-              <a href="https://github.com/guiandrade17/JAVA" target="_blank" title="GitHub">
-                <i class="fab fa-github"></i>
-              </a>
-            </div>
+            <div class="card-links"><a href="https://github.com/guiandrade17/JAVA" target="_blank"><i class="fab fa-github"></i></a></div>
           </div>
           <h3 class="card-title">JAVA</h3>
-          <p class="card-description">
-            Exercícios e conceitos fundamentais de Java: sintaxe básica, lógica, orientação a objetos e atividades práticas do curso do DCE.
-          </p>
+          <p class="card-description">Exercícios e conceitos fundamentais de Java: sintaxe básica, lógica, orientação a objetos e atividades práticas do curso do DCE.</p>
           <div class="card-tags">
-            <span class="tag java-tag">Java</span>
-            <span class="tag">OOP</span>
-            <span class="tag">DCE</span>
+            <span class="tag java-tag">Java</span><span class="tag">OOP</span><span class="tag">DCE</span>
           </div>
-          <a href="https://github.com/guiandrade17/JAVA" target="_blank" class="card-btn">
-            Ver no GitHub <i class="fas fa-arrow-right"></i>
-          </a>
+          <a href="https://github.com/guiandrade17/JAVA" target="_blank" class="card-btn">Ver no GitHub <i class="fas fa-arrow-right"></i></a>
         </div>
 
-        <!-- Card 3: BD -->
         <div class="project-card reveal">
           <div class="card-header">
             <div class="card-icon db-icon"><i class="fas fa-database"></i></div>
-            <div class="card-links">
-              <a href="https://github.com/guiandrade17/BD" target="_blank" title="GitHub">
-                <i class="fab fa-github"></i>
-              </a>
-            </div>
+            <div class="card-links"><a href="https://github.com/guiandrade17/BD" target="_blank"><i class="fab fa-github"></i></a></div>
           </div>
           <h3 class="card-title">BD – Banco de Dados</h3>
-          <p class="card-description">
-            Scripts SQL, modelagem de dados e consultas em MySQL. BD I e BD II com estudo avançado de modelos e comparações entre sistemas de dados.
-          </p>
+          <p class="card-description">Scripts SQL, modelagem de dados e consultas em MySQL. BD I e BD II com estudo avançado de modelos e comparações entre sistemas de dados.</p>
           <div class="card-tags">
-            <span class="tag sql-tag">SQL</span>
-            <span class="tag">MySQL</span>
-            <span class="tag">Modelagem</span>
-            <span class="tag">BD I & II</span>
+            <span class="tag sql-tag">SQL</span><span class="tag">MySQL</span><span class="tag">Modelagem</span><span class="tag">BD I & II</span>
           </div>
-          <a href="https://github.com/guiandrade17/BD" target="_blank" class="card-btn">
-            Ver no GitHub <i class="fas fa-arrow-right"></i>
-          </a>
+          <a href="https://github.com/guiandrade17/BD" target="_blank" class="card-btn">Ver no GitHub <i class="fas fa-arrow-right"></i></a>
         </div>
 
-        <!-- Card 4: PYTHON -->
         <div class="project-card reveal">
           <div class="card-header">
             <div class="card-icon py-icon"><i class="fab fa-python"></i></div>
-            <div class="card-links">
-              <a href="https://github.com/guiandrade17" target="_blank" title="GitHub">
-                <i class="fab fa-github"></i>
-              </a>
-            </div>
+            <div class="card-links"><a href="https://github.com/guiandrade17" target="_blank"><i class="fab fa-github"></i></a></div>
           </div>
           <h3 class="card-title">PYTHON – POO</h3>
-          <p class="card-description">
-            Python com foco em Programação Orientada a Objetos: classes, atributos, métodos, encapsulamento e exercícios práticos desenvolvidos no PyCharm.
-          </p>
+          <p class="card-description">Python com foco em Programação Orientada a Objetos: classes, atributos, métodos, encapsulamento e exercícios práticos desenvolvidos no PyCharm.</p>
           <div class="card-tags">
-            <span class="tag py-tag">Python</span>
-            <span class="tag">POO</span>
-            <span class="tag">PyCharm</span>
+            <span class="tag py-tag">Python</span><span class="tag">POO</span><span class="tag">PyCharm</span>
           </div>
-          <a href="https://github.com/guiandrade17" target="_blank" class="card-btn">
-            Ver no GitHub <i class="fas fa-arrow-right"></i>
-          </a>
+          <a href="https://github.com/guiandrade17" target="_blank" class="card-btn">Ver no GitHub <i class="fas fa-arrow-right"></i></a>
         </div>
 
-        <!-- Card 5: Front-end -->
         <div class="project-card reveal featured">
           <div class="card-featured-badge">⭐ Destaque</div>
           <div class="card-header">
             <div class="card-icon fe-icon"><i class="fas fa-paint-brush"></i></div>
-            <div class="card-links">
-              <a href="https://github.com/guiandrade17" target="_blank" title="GitHub">
-                <i class="fab fa-github"></i>
-              </a>
-            </div>
+            <div class="card-links"><a href="https://github.com/guiandrade17" target="_blank"><i class="fab fa-github"></i></a></div>
           </div>
           <h3 class="card-title">Front-end Projects</h3>
-          <p class="card-description">
-            Mais de 60 exercícios práticos de HTML, CSS e JavaScript no VS Code. Estruturação de páginas, estilização avançada e interatividade dinâmica.
-          </p>
+          <p class="card-description">Mais de 60 exercícios práticos de HTML, CSS e JavaScript no VS Code. Estruturação de páginas, estilização avançada e interatividade dinâmica.</p>
           <div class="card-tags">
-            <span class="tag html-tag">HTML5</span>
-            <span class="tag css-tag">CSS3</span>
-            <span class="tag js-tag">JavaScript</span>
-            <span class="tag">VS Code</span>
+            <span class="tag html-tag">HTML5</span><span class="tag css-tag">CSS3</span><span class="tag js-tag">JavaScript</span><span class="tag">VS Code</span>
           </div>
-          <a href="https://github.com/guiandrade17" target="_blank" class="card-btn">
-            Ver no GitHub <i class="fas fa-arrow-right"></i>
-          </a>
+          <a href="https://github.com/guiandrade17" target="_blank" class="card-btn">Ver no GitHub <i class="fas fa-arrow-right"></i></a>
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- ============================================================
-       SECTION: CONTATO
-  ============================================================ -->
   <section id="contato">
     <div class="container">
       <div class="section-header reveal">
@@ -387,9 +240,7 @@
       <div class="contato-grid">
         <div class="contato-text reveal">
           <h3>Vamos conversar?</h3>
-          <p>
-            Estou aberto a oportunidades de estágio, projetos colaborativos e novas conexões na área de tecnologia. Não hesite em entrar em contato!
-          </p>
+          <p>Estou aberto a oportunidades de estágio, projetos colaborativos e novas conexões na área de tecnologia. Não hesite em entrar em contato!</p>
           <p class="contato-code">
             <span class="code-keyword">const</span> guilherme = {<br>
             &nbsp;&nbsp;<span class="code-key">status:</span> <span class="code-str">"disponível"</span>,<br>
@@ -402,55 +253,85 @@
         <div class="contato-links reveal">
           <a href="https://linkedin.com/in/guilherme-brito-andrade-090b81348" target="_blank" class="contact-card linkedin">
             <div class="contact-icon"><i class="fab fa-linkedin"></i></div>
-            <div class="contact-info">
-              <span class="contact-platform">LinkedIn</span>
-              <span class="contact-handle">guilherme-brito-andrade</span>
-            </div>
+            <div class="contact-info"><span class="contact-platform">LinkedIn</span><span class="contact-handle">guilherme-brito-andrade</span></div>
             <i class="fas fa-external-link-alt contact-arrow"></i>
           </a>
-
           <a href="https://instagram.com/guilhermebritoa" target="_blank" class="contact-card instagram">
             <div class="contact-icon"><i class="fab fa-instagram"></i></div>
-            <div class="contact-info">
-              <span class="contact-platform">Instagram</span>
-              <span class="contact-handle">@guilhermebritoa</span>
-            </div>
+            <div class="contact-info"><span class="contact-platform">Instagram</span><span class="contact-handle">@guilhermebritoa</span></div>
             <i class="fas fa-external-link-alt contact-arrow"></i>
           </a>
-
           <a href="mailto:guilhermebritoandrade17@gmail.com" class="contact-card email">
             <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-            <div class="contact-info">
-              <span class="contact-platform">E-mail</span>
-              <span class="contact-handle">guilhermebritoandrade17@gmail.com</span>
-            </div>
+            <div class="contact-info"><span class="contact-platform">E-mail</span><span class="contact-handle">guilhermebritoandrade17@gmail.com</span></div>
             <i class="fas fa-external-link-alt contact-arrow"></i>
           </a>
-
           <a href="https://github.com/guiandrade17" target="_blank" class="contact-card github">
             <div class="contact-icon"><i class="fab fa-github"></i></div>
-            <div class="contact-info">
-              <span class="contact-platform">GitHub</span>
-              <span class="contact-handle">guiandrade17</span>
-            </div>
+            <div class="contact-info"><span class="contact-platform">GitHub</span><span class="contact-handle">guiandrade17</span></div>
+            <i class="fas fa-external-link-alt contact-arrow"></i>
+          </a>
+          <a href="https://wa.me/5561992689516?text=Olá%20Guilherme!%20Vi%20seu%20portfólio%20e%20gostaria%20de%20conversar." target="_blank" class="contact-card whatsapp">
+            <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
+            <div class="contact-info"><span class="contact-platform">WhatsApp</span><span class="contact-handle">(61) 99268-9516</span></div>
             <i class="fas fa-external-link-alt contact-arrow"></i>
           </a>
         </div>
       </div>
+
+      <div class="calendar-section reveal">
+        <div class="calendar-header">
+          <div class="calendar-title-wrap">
+            <i class="fas fa-calendar-check calendar-icon-title"></i>
+            <div>
+              <h3 class="calendar-title">Agende uma Conversa</h3>
+              <p class="calendar-subtitle">Disponível para entrevistas, estágios e projetos · 08h–18h</p>
+            </div>
+          </div>
+          <div class="calendar-legend">
+            <span class="legend-item"><span class="legend-dot available"></span>Disponível</span>
+            <span class="legend-item"><span class="legend-dot selected"></span>Selecionado</span>
+          </div>
+        </div>
+        <div class="calendar-body">
+          <div class="cal-month-nav">
+            <button class="cal-nav-btn" id="cal-prev"><i class="fas fa-chevron-left"></i></button>
+            <span class="cal-month-label" id="cal-month-label"></span>
+            <button class="cal-nav-btn" id="cal-next"><i class="fas fa-chevron-right"></i></button>
+          </div>
+          <div class="cal-weekdays">
+            <span>Dom</span><span>Seg</span><span>Ter</span>
+            <span>Qua</span><span>Qui</span><span>Sex</span><span>Sáb</span>
+          </div>
+          <div class="cal-days" id="cal-days"></div>
+        </div>
+        <div class="cal-slots-wrap" id="cal-slots-wrap">
+          <p class="cal-slots-title" id="cal-slots-title"></p>
+          <div class="cal-slots" id="cal-slots"></div>
+          <div class="cal-confirm" id="cal-confirm" style="display:none;">
+            <div class="cal-confirm-info" id="cal-confirm-info"></div>
+            <a id="cal-whatsapp-btn" href="#" target="_blank" class="btn btn-primary cal-send-btn">
+              <i class="fab fa-whatsapp"></i> Confirmar via WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
-  <!-- ============================================================
-       FOOTER
-  ============================================================ -->
+  <a href="https://wa.me/5561992689516?text=Olá%20Guilherme!%20Vi%20seu%20portfólio%20e%20gostaria%20de%20conversar."
+     target="_blank" class="whatsapp-float" aria-label="Fale pelo WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+    <span class="whatsapp-float-label">WhatsApp</span>
+  </a>
+
   <footer id="footer">
     <div class="footer-inner">
       <div class="footer-logo">
         <span class="logo-bracket">&lt;</span>GB<span class="logo-bracket">/&gt;</span>
       </div>
-      <p class="footer-text">
-        Desenvolvido com <span class="accent">❤</span> por Guilherme Brito · © 2026
-      </p>
+      <p class="footer-text">Desenvolvido com <span class="accent">❤</span> por Guilherme Brito · © 2026</p>
       <p class="footer-sub">HTML · CSS · JavaScript · GitHub Pages</p>
     </div>
     <div class="footer-glow"></div>
