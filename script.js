@@ -1,219 +1,348 @@
-// ============================================================
-// script.js – Portfólio Guilherme Brito
-// Interações: loader, navbar, menu, scroll reveal,
-// typing effect, partículas e barras de skill
-// ============================================================
+/* ============================================================
+   script.js – Guilherme Brito Portfolio
+   Interações, animações e efeitos
+============================================================ */
 
-document.addEventListener("DOMContentLoaded", () => {
+/* ──────────────────────────────────────────────────────────
+   LOADER
+────────────────────────────────────────────────────────── */
+window.addEventListener('load', () => {
+  const loader = document.getElementById('loader');
 
-  // ------------------------------------------------------------
-  // LOADER
-  // ------------------------------------------------------------
-  const loader = document.getElementById("loader");
+  setTimeout(() => {
+    loader.classList.add('hidden');
+  }, 1200);
+});
 
-  window.addEventListener("load", () => {
-    setTimeout(() => {
-      loader.classList.add("hidden");
-    }, 1200);
+/* ──────────────────────────────────────────────────────────
+   NAVBAR SCROLL
+────────────────────────────────────────────────────────── */
+const navbar = document.getElementById('navbar');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 40) {
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
+});
+
+/* ──────────────────────────────────────────────────────────
+   MOBILE MENU
+────────────────────────────────────────────────────────── */
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('nav-links');
+const navLinkItems = document.querySelectorAll('.nav-link');
+
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('open');
+  navLinks.classList.toggle('open');
+});
+
+navLinkItems.forEach(link => {
+  link.addEventListener('click', () => {
+    hamburger.classList.remove('open');
+    navLinks.classList.remove('open');
   });
+});
 
-  // ------------------------------------------------------------
-  // HAMBURGER MENU (mobile)
-  // ------------------------------------------------------------
-  const hamburger = document.getElementById("hamburger");
-  const navLinks = document.getElementById("nav-links");
+/* ──────────────────────────────────────────────────────────
+   ACTIVE NAV LINK
+────────────────────────────────────────────────────────── */
+const sections = document.querySelectorAll('section');
 
-  hamburger.addEventListener("click", () => {
-    hamburger.classList.toggle("open");
-    navLinks.classList.toggle("open");
-  });
+window.addEventListener('scroll', () => {
+  let current = '';
 
-  // fecha menu ao clicar em link
-  document.querySelectorAll(".nav-link").forEach(link => {
-    link.addEventListener("click", () => {
-      hamburger.classList.remove("open");
-      navLinks.classList.remove("open");
-    });
-  });
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 120;
+    const sectionHeight = section.clientHeight;
 
-  // ------------------------------------------------------------
-  // NAVBAR SCROLL EFFECT
-  // ------------------------------------------------------------
-  const navbar = document.getElementById("navbar");
-
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 50) {
-      navbar.classList.add("scrolled");
-    } else {
-      navbar.classList.remove("scrolled");
+    if (window.scrollY >= sectionTop) {
+      current = section.getAttribute('id');
     }
   });
 
-  // ------------------------------------------------------------
-  // SCROLL REVEAL (animações ao aparecer)
-  // ------------------------------------------------------------
-  const revealElements = document.querySelectorAll(".reveal");
+  navLinkItems.forEach(link => {
+    link.classList.remove('active');
 
-  const revealOnScroll = () => {
-    const windowHeight = window.innerHeight;
+    if (link.getAttribute('href').includes(current)) {
+      link.classList.add('active');
+    }
+  });
+});
 
-    revealElements.forEach(el => {
-      const elementTop = el.getBoundingClientRect().top;
+/* ──────────────────────────────────────────────────────────
+   REVEAL ON SCROLL
+────────────────────────────────────────────────────────── */
+const revealElements = document.querySelectorAll('.reveal');
 
-      if (elementTop < windowHeight - 100) {
-        el.classList.add("visible");
-      }
-    });
-  };
+const revealOnScroll = () => {
+  const triggerBottom = window.innerHeight * 0.88;
 
-  window.addEventListener("scroll", revealOnScroll);
-  revealOnScroll();
+  revealElements.forEach(el => {
+    const top = el.getBoundingClientRect().top;
 
-  // ------------------------------------------------------------
-  // TYPING EFFECT (home)
-  // ------------------------------------------------------------
-  const typedText = document.getElementById("typed-text");
+    if (top < triggerBottom) {
+      el.classList.add('visible');
+    }
+  });
+};
 
-  const phrases = [
-    "Software Engineer Student",
-    "Front-end Developer",
-    "Back-end Enthusiast",
-    "Problem Solver",
-    "Tech Explorer"
-  ];
+window.addEventListener('scroll', revealOnScroll);
+window.addEventListener('load', revealOnScroll);
 
-  let phraseIndex = 0;
-  let charIndex = 0;
-  let isDeleting = false;
+/* ──────────────────────────────────────────────────────────
+   TYPING EFFECT
+────────────────────────────────────────────────────────── */
+const typedText = document.getElementById('typed-text');
 
-  function typeEffect() {
-    const currentPhrase = phrases[phraseIndex];
+const words = [
+  'Software Engineer',
+  'Front-end Developer',
+  'C# Developer',
+  'Java & SQL Student',
+  'Technology Enthusiast'
+];
 
-    if (!isDeleting) {
-      typedText.textContent = currentPhrase.substring(0, charIndex++);
-      if (charIndex > currentPhrase.length) {
-        isDeleting = true;
-        setTimeout(typeEffect, 1200);
-        return;
-      }
-    } else {
-      typedText.textContent = currentPhrase.substring(0, charIndex--);
-      if (charIndex < 0) {
-        isDeleting = false;
-        phraseIndex = (phraseIndex + 1) % phrases.length;
+let wordIndex = 0;
+let charIndex = 0;
+let deleting = false;
+
+function typeEffect() {
+  const currentWord = words[wordIndex];
+
+  if (!deleting) {
+    typedText.textContent = currentWord.substring(0, charIndex + 1);
+    charIndex++;
+
+    if (charIndex === currentWord.length) {
+      deleting = true;
+      setTimeout(typeEffect, 1800);
+      return;
+    }
+  } else {
+    typedText.textContent = currentWord.substring(0, charIndex - 1);
+    charIndex--;
+
+    if (charIndex === 0) {
+      deleting = false;
+      wordIndex++;
+
+      if (wordIndex >= words.length) {
+        wordIndex = 0;
       }
     }
-
-    setTimeout(typeEffect, isDeleting ? 40 : 80);
   }
 
-  typeEffect();
+  setTimeout(typeEffect, deleting ? 45 : 90);
+}
 
-  // ------------------------------------------------------------
-  // TECH BARS ANIMATION
-  // ------------------------------------------------------------
-  const techSection = document.getElementById("tecnologias");
-  const techBars = document.querySelectorAll(".tech-fill");
+document.addEventListener('DOMContentLoaded', typeEffect);
 
-  const fillBars = () => {
-    const sectionTop = techSection.getBoundingClientRect().top;
+/* ──────────────────────────────────────────────────────────
+   TECH BARS ANIMATION
+────────────────────────────────────────────────────────── */
+const techFills = document.querySelectorAll('.tech-fill');
 
-    if (sectionTop < window.innerHeight - 150) {
-      techBars.forEach(bar => {
-        const width = bar.getAttribute("data-w");
-        bar.style.width = width + "%";
-      });
+const animateTechBars = () => {
+  techFills.forEach(fill => {
+    const rect = fill.getBoundingClientRect();
+
+    if (rect.top < window.innerHeight - 60) {
+      const width = fill.getAttribute('data-w');
+      fill.style.width = width + '%';
     }
-  };
+  });
+};
 
-  window.addEventListener("scroll", fillBars);
-  fillBars();
+window.addEventListener('scroll', animateTechBars);
+window.addEventListener('load', animateTechBars);
 
-  // ------------------------------------------------------------
-  // ACTIVE LINK (scroll spy simples)
-  // ------------------------------------------------------------
-  const sections = document.querySelectorAll("section");
-  const navItems = document.querySelectorAll(".nav-link");
+/* ──────────────────────────────────────────────────────────
+   PARTICLE BACKGROUND
+────────────────────────────────────────────────────────── */
+const canvas = document.getElementById('particles-canvas');
+const ctx = canvas.getContext('2d');
 
-  window.addEventListener("scroll", () => {
-    let current = "";
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
 
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop - 120;
-      if (scrollY >= sectionTop) {
-        current = section.getAttribute("id");
+let particlesArray = [];
+
+class Particle {
+  constructor() {
+    this.x = Math.random() * canvas.width;
+    this.y = Math.random() * canvas.height;
+
+    this.size = Math.random() * 2 + 1;
+
+    this.speedX = (Math.random() - 0.5) * 0.4;
+    this.speedY = (Math.random() - 0.5) * 0.4;
+
+    this.opacity = Math.random() * 0.5 + 0.2;
+  }
+
+  update() {
+    this.x += this.speedX;
+    this.y += this.speedY;
+
+    if (this.x > canvas.width) this.x = 0;
+    if (this.x < 0) this.x = canvas.width;
+
+    if (this.y > canvas.height) this.y = 0;
+    if (this.y < 0) this.y = canvas.height;
+  }
+
+  draw() {
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+
+    ctx.fillStyle = `rgba(0,245,200,${this.opacity})`;
+    ctx.fill();
+  }
+}
+
+function initParticles() {
+  particlesArray = [];
+
+  const numberOfParticles = Math.min(
+    Math.floor(window.innerWidth / 12),
+    120
+  );
+
+  for (let i = 0; i < numberOfParticles; i++) {
+    particlesArray.push(new Particle());
+  }
+}
+
+function connectParticles() {
+  for (let a = 0; a < particlesArray.length; a++) {
+    for (let b = a; b < particlesArray.length; b++) {
+      const dx = particlesArray[a].x - particlesArray[b].x;
+      const dy = particlesArray[a].y - particlesArray[b].y;
+
+      const distance = dx * dx + dy * dy;
+
+      if (distance < 9000) {
+        ctx.beginPath();
+
+        ctx.strokeStyle = `rgba(0,245,200,${
+          0.08 - distance / 120000
+        })`;
+
+        ctx.lineWidth = 0.5;
+
+        ctx.moveTo(
+          particlesArray[a].x,
+          particlesArray[a].y
+        );
+
+        ctx.lineTo(
+          particlesArray[b].x,
+          particlesArray[b].y
+        );
+
+        ctx.stroke();
       }
-    });
+    }
+  }
+}
 
-    navItems.forEach(link => {
-      link.classList.remove("active");
-      if (link.getAttribute("href") === "#" + current) {
-        link.classList.add("active");
-      }
-    });
+function animateParticles() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  particlesArray.forEach(particle => {
+    particle.update();
+    particle.draw();
   });
 
-  // ------------------------------------------------------------
-  // PARTICLES BACKGROUND (canvas simples)
-  // ------------------------------------------------------------
-  const canvas = document.getElementById("particles-canvas");
-  const ctx = canvas.getContext("2d");
+  connectParticles();
 
-  let particlesArray = [];
+  requestAnimationFrame(animateParticles);
+}
 
+initParticles();
+animateParticles();
+
+/* ──────────────────────────────────────────────────────────
+   RESIZE CANVAS
+────────────────────────────────────────────────────────── */
+window.addEventListener('resize', () => {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
 
-  window.addEventListener("resize", () => {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    initParticles();
+  initParticles();
+});
+
+/* ──────────────────────────────────────────────────────────
+   PARALLAX EFFECT
+────────────────────────────────────────────────────────── */
+window.addEventListener('scroll', () => {
+  const scrollY = window.scrollY;
+
+  const avatar = document.querySelector('.avatar-frame');
+
+  if (avatar) {
+    avatar.style.transform = `translateY(${scrollY * 0.06}px)`;
+  }
+});
+
+/* ──────────────────────────────────────────────────────────
+   PROJECT CARD HOVER GLOW
+────────────────────────────────────────────────────────── */
+const cards = document.querySelectorAll('.project-card');
+
+cards.forEach(card => {
+  card.addEventListener('mousemove', e => {
+    const rect = card.getBoundingClientRect();
+
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    card.style.background = `
+      radial-gradient(
+        circle at ${x}px ${y}px,
+        rgba(0,245,200,0.10),
+        rgba(17,24,39,1) 45%
+      )
+    `;
   });
 
-  class Particle {
-    constructor() {
-      this.x = Math.random() * canvas.width;
-      this.y = Math.random() * canvas.height;
-      this.size = Math.random() * 2;
-      this.speedX = (Math.random() - 0.5) * 0.5;
-      this.speedY = (Math.random() - 0.5) * 0.5;
-    }
-
-    update() {
-      this.x += this.speedX;
-      this.y += this.speedY;
-
-      if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
-      if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
-    }
-
-    draw() {
-      ctx.fillStyle = "rgba(0,245,200,0.5)";
-      ctx.beginPath();
-      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-      ctx.fill();
-    }
-  }
-
-  function initParticles() {
-    particlesArray = [];
-    for (let i = 0; i < 80; i++) {
-      particlesArray.push(new Particle());
-    }
-  }
-
-  function animateParticles() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    particlesArray.forEach(p => {
-      p.update();
-      p.draw();
-    });
-
-    requestAnimationFrame(animateParticles);
-  }
-
-  initParticles();
-  animateParticles();
-
+  card.addEventListener('mouseleave', () => {
+    card.style.background = '';
+  });
 });
+
+/* ──────────────────────────────────────────────────────────
+   SMOOTH SCROLL
+────────────────────────────────────────────────────────── */
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+
+    const target = document.querySelector(
+      this.getAttribute('href')
+    );
+
+    if (target) {
+      target.scrollIntoView({
+        behavior: 'smooth'
+      });
+    }
+  });
+});
+
+/* ──────────────────────────────────────────────────────────
+   CONSOLE EASTER EGG
+────────────────────────────────────────────────────────── */
+console.log(`
+╔══════════════════════════════════════╗
+║        Guilherme Brito Portfolio     ║
+║     Software Engineer Student        ║
+╚══════════════════════════════════════╝
+
+GitHub: https://github.com/guiandrade17
+LinkedIn:
+https://linkedin.com/in/guilherme-brito-andrade-090b81348
+`);
