@@ -3,472 +3,457 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Guilherme Brito Andrade – Software Engineer</title>
+  <title>Guilherme Brito – Software Engineer</title>
   <link rel="stylesheet" href="style.css" />
+  <!-- Google Fonts: Syne (display) + JetBrains Mono (code feel) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;1,9..144,300&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <!-- Devicons for tech icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/devicons/1.8.0/css/devicons.min.css"/>
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 </head>
 <body>
 
-  <!-- LOADER -->
+  <!-- ============================================================
+       LOADER
+  ============================================================ -->
   <div id="loader">
-    <div class="loader-dot"></div>
-    <div class="loader-dot"></div>
-    <div class="loader-dot"></div>
+    <div class="loader-inner">
+      <div class="loader-ring"></div>
+      <div class="loader-ring"></div>
+      <div class="loader-ring"></div>
+      <span class="loader-text">GB_</span>
+    </div>
   </div>
 
-  <!-- NAVBAR -->
+  <!-- ============================================================
+       CANVAS – PARTICLE BACKGROUND
+  ============================================================ -->
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- ============================================================
+       NAVBAR
+  ============================================================ -->
   <nav id="navbar">
     <div class="nav-logo">
-      <span class="mono accent">gb</span><span class="mono text-dim">_andrade</span>
+      <span class="logo-bracket">&lt;</span>GB<span class="logo-bracket">/&gt;</span>
     </div>
     <button class="hamburger" id="hamburger" aria-label="Menu">
-      <span></span><span></span>
+      <span></span><span></span><span></span>
     </button>
     <ul class="nav-links" id="nav-links">
-      <li><a href="#home" class="nav-link">início</a></li>
-      <li><a href="#sobre" class="nav-link">sobre</a></li>
-      <li><a href="#tecnologias" class="nav-link">stack</a></li>
-      <li><a href="#projetos" class="nav-link">projetos</a></li>
-      <li><a href="#agendar" class="nav-link">contato</a></li>
+      <li><a href="#home" class="nav-link">Home</a></li>
+      <li><a href="#sobre" class="nav-link">Sobre</a></li>
+      <li><a href="#tecnologias" class="nav-link">Tecnologias</a></li>
+      <li><a href="#projetos" class="nav-link">Projetos</a></li>
+      <li><a href="#contato" class="nav-link">Contato</a></li>
     </ul>
   </nav>
 
-  <!-- ======================================================
-       HERO
-  ====================================================== -->
+  <!-- ============================================================
+       SECTION: HOME
+  ============================================================ -->
   <section id="home">
-    <!-- Subtle grid -->
-    <div class="hero-grid-bg"></div>
-
-    <div class="hero-inner">
-      <!-- Photo -->
-      <div class="hero-photo-wrap reveal-left">
-        <div class="photo-frame">
-          <!-- Replace src with your actual photo path -->
-          <div class="photo-placeholder">
-            <span class="photo-initials">GB</span>
-          </div>
-          <!-- Uncomment when you have photo:
-          <img src="foto.jpg" alt="Guilherme Brito Andrade" class="hero-photo" />
-          -->
-          <div class="photo-glow"></div>
-          <div class="photo-border"></div>
-        </div>
-        <!-- Floating badge -->
-        <div class="hero-badge">
-          <span class="badge-dot"></span>
-          <span class="badge-text mono">disponível para estágio</span>
+    <div class="home-content">
+      <!-- Avatar / Glitch Frame -->
+      <div class="avatar-wrapper reveal">
+        <div class="avatar-frame">
+          <div class="avatar-initials">GB</div>
+          <div class="avatar-ring r1"></div>
+          <div class="avatar-ring r2"></div>
+          <div class="avatar-ring r3"></div>
         </div>
       </div>
 
-      <!-- Text -->
-      <div class="hero-text reveal-right">
-        <p class="hero-tag mono"><span class="accent">01</span> / Olá, eu sou</p>
-        <h1 class="hero-name">
-          Guilherme<br>
-          <em>Brito</em> Andrade
-        </h1>
-        <p class="hero-role mono">
-          <span id="typed-text"></span><span class="cursor">_</span>
+      <div class="home-text reveal">
+        <p class="home-greeting">// Olá, mundo! 👋</p>
+        <h1 class="home-name">Guilherme<br><span class="accent">Brito</span></h1>
+        <p class="home-role">
+          <span class="typing-prefix">$ </span>
+          <span id="typed-text"></span><span class="cursor">|</span>
         </p>
-        <p class="hero-desc">
-          Estudante de Engenharia de Software no CEUB, Brasília.<br>
-          Apaixonado por construir interfaces e sistemas bem feitos.
+        <p class="home-sub">
+          Estudante de <span class="accent">Engenharia de Software</span> no CEUB · 18 anos ·<br>
+          Apaixonado por código, futebol e aprender coisas novas.
         </p>
-        <div class="hero-cta">
-          <a href="https://github.com/guiandrade17" target="_blank" class="btn-primary">
+        <div class="home-cta">
+          <a href="https://github.com/guiandrade17" target="_blank" class="btn btn-primary">
             <i class="fab fa-github"></i> GitHub
           </a>
-          <a href="https://linkedin.com/in/guilherme-brito-andrade-090b81348" target="_blank" class="btn-outline">
+          <a href="https://linkedin.com/in/guilherme-brito-andrade-090b81348" target="_blank" class="btn btn-outline">
             <i class="fab fa-linkedin"></i> LinkedIn
           </a>
-          <a href="#agendar" class="btn-ghost">
-            <i class="fas fa-calendar-alt"></i> Agendar conversa
+          <a href="#contato" class="btn btn-ghost">
+            <i class="fas fa-envelope"></i> Contato
           </a>
         </div>
       </div>
     </div>
 
-    <div class="scroll-hint">
-      <span class="mono">scroll</span>
-      <div class="scroll-bar"></div>
+    <!-- Scroll indicator -->
+    <div class="scroll-indicator">
+      <span>scroll</span>
+      <div class="scroll-line"></div>
     </div>
   </section>
 
-  <!-- ======================================================
-       SOBRE
-  ====================================================== -->
+  <!-- ============================================================
+       SECTION: SOBRE
+  ============================================================ -->
   <section id="sobre">
     <div class="container">
-      <div class="section-label reveal">
-        <span class="mono accent">// 01</span>
-        <div class="label-line"></div>
+      <div class="section-header reveal">
+        <span class="section-tag">// 01</span>
+        <h2>Sobre <span class="accent">Mim</span></h2>
+        <div class="section-line"></div>
       </div>
-      <h2 class="section-title reveal">Sobre <em>Mim</em></h2>
 
-      <div class="sobre-layout">
-        <div class="sobre-body reveal">
+      <div class="sobre-grid">
+        <div class="sobre-text reveal">
           <p>
-            Sou estudante de <strong>Engenharia de Software</strong> no Centro Universitário de Brasília (CEUB), no primeiro ano da graduação.
-            Minha jornada na programação começou com curiosidade e rapidamente se tornou uma paixão real.
+            Sou um estudante de <strong>Engenharia de Software</strong> no <strong>CEUB (Centro Universitário de Brasília)</strong>, com foco em construir soluções tecnológicas eficientes e bem estruturadas.
           </p>
           <p>
-            Hoje trabalho com diversas tecnologias — de lógica e estruturas de dados em C# e Java a SQL, front-end e orientação a objetos em Python.
-            Meu objetivo é me tornar um engenheiro completo, capaz de construir sistemas robustos com excelente experiência de usuário.
+            Minha jornada na programação começou com curiosidade e se transformou em paixão. Hoje trabalho com diversas tecnologias — de lógica básica em C# a bancos de dados relacionais e desenvolvimento front-end.
           </p>
-          <div class="chips">
+          <p>
+            Meu objetivo é me tornar um <strong>Engenheiro de Software</strong> completo, capaz de construir sistemas robustos, escaláveis e com excelente experiência de usuário.
+          </p>
+
+          <div class="info-chips">
             <span class="chip"><i class="fas fa-graduation-cap"></i> CEUB – Eng. Software</span>
             <span class="chip"><i class="fas fa-map-marker-alt"></i> Brasília, DF</span>
-            <span class="chip accent-chip"><i class="fas fa-circle"></i> Open to opportunities</span>
+            <span class="chip"><i class="fas fa-code"></i> Open to opportunities</span>
           </div>
         </div>
 
         <div class="sobre-stats reveal">
-          <div class="stat">
-            <span class="stat-n">5<span class="accent">+</span></span>
-            <span class="stat-l mono">Linguagens</span>
+          <div class="stat-card">
+            <span class="stat-number">5<span class="accent">+</span></span>
+            <span class="stat-label">Linguagens</span>
           </div>
-          <div class="stat">
-            <span class="stat-n">60<span class="accent">+</span></span>
-            <span class="stat-l mono">Exercícios Front-end</span>
+          <div class="stat-card">
+            <span class="stat-number">60<span class="accent">+</span></span>
+            <span class="stat-label">Exercícios Front-end</span>
           </div>
-          <div class="stat">
-            <span class="stat-n">4<span class="accent">+</span></span>
-            <span class="stat-l mono">Repositórios</span>
+          <div class="stat-card">
+            <span class="stat-number">4<span class="accent">+</span></span>
+            <span class="stat-label">Repositórios</span>
           </div>
-          <div class="stat">
-            <span class="stat-n">1<span class="accent">º</span></span>
-            <span class="stat-l mono">Ano na Faculdade</span>
+          <div class="stat-card">
+            <span class="stat-number">1<span class="accent">st</span></span>
+            <span class="stat-label">Ano na Faculdade</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ======================================================
-       TECNOLOGIAS
-  ====================================================== -->
+  <!-- ============================================================
+       SECTION: TECNOLOGIAS
+  ============================================================ -->
   <section id="tecnologias">
     <div class="container">
-      <div class="section-label reveal">
-        <span class="mono accent">// 02</span>
-        <div class="label-line"></div>
+      <div class="section-header reveal">
+        <span class="section-tag">// 02</span>
+        <h2>Tech <span class="accent">Stack</span></h2>
+        <div class="section-line"></div>
       </div>
-      <h2 class="section-title reveal">Tech <em>Stack</em></h2>
 
       <div class="tech-grid reveal">
 
-        <div class="tech-item">
-          <div class="tech-icon html"><i class="fab fa-html5"></i></div>
-          <span class="tech-name mono">HTML5</span>
+        <div class="tech-card" data-skill="85">
+          <div class="tech-icon-wrap html">
+            <i class="fab fa-html5"></i>
+          </div>
+          <span class="tech-name">HTML5</span>
+          <div class="tech-bar"><div class="tech-fill" data-w="85"></div></div>
         </div>
-        <div class="tech-item">
-          <div class="tech-icon css"><i class="fab fa-css3-alt"></i></div>
-          <span class="tech-name mono">CSS3</span>
+
+        <div class="tech-card" data-skill="80">
+          <div class="tech-icon-wrap css">
+            <i class="fab fa-css3-alt"></i>
+          </div>
+          <span class="tech-name">CSS3</span>
+          <div class="tech-bar"><div class="tech-fill" data-w="80"></div></div>
         </div>
-        <div class="tech-item">
-          <div class="tech-icon js"><i class="fab fa-js"></i></div>
-          <span class="tech-name mono">JavaScript</span>
+
+        <div class="tech-card" data-skill="70">
+          <div class="tech-icon-wrap js">
+            <i class="fab fa-js-square"></i>
+          </div>
+          <span class="tech-name">JavaScript</span>
+          <div class="tech-bar"><div class="tech-fill" data-w="70"></div></div>
         </div>
-        <div class="tech-item">
-          <div class="tech-icon python"><i class="fab fa-python"></i></div>
-          <span class="tech-name mono">Python</span>
+
+        <div class="tech-card" data-skill="65">
+          <div class="tech-icon-wrap python">
+            <i class="fab fa-python"></i>
+          </div>
+          <span class="tech-name">Python</span>
+          <div class="tech-bar"><div class="tech-fill" data-w="65"></div></div>
         </div>
-        <div class="tech-item">
-          <div class="tech-icon java"><i class="fab fa-java"></i></div>
-          <span class="tech-name mono">Java</span>
+
+        <div class="tech-card" data-skill="60">
+          <div class="tech-icon-wrap java">
+            <i class="fab fa-java"></i>
+          </div>
+          <span class="tech-name">Java</span>
+          <div class="tech-bar"><div class="tech-fill" data-w="60"></div></div>
         </div>
-        <div class="tech-item">
-          <div class="tech-icon csharp"><i class="fas fa-code"></i></div>
-          <span class="tech-name mono">C#</span>
+
+        <div class="tech-card" data-skill="70">
+          <div class="tech-icon-wrap csharp">
+            <i class="fas fa-code"></i>
+          </div>
+          <span class="tech-name">C#</span>
+          <div class="tech-bar"><div class="tech-fill" data-w="70"></div></div>
         </div>
-        <div class="tech-item">
-          <div class="tech-icon sql"><i class="fas fa-database"></i></div>
-          <span class="tech-name mono">SQL</span>
+
+        <div class="tech-card" data-skill="75">
+          <div class="tech-icon-wrap sql">
+            <i class="fas fa-database"></i>
+          </div>
+          <span class="tech-name">SQL</span>
+          <div class="tech-bar"><div class="tech-fill" data-w="75"></div></div>
         </div>
-        <div class="tech-item">
-          <div class="tech-icon git"><i class="fab fa-git-alt"></i></div>
-          <span class="tech-name mono">Git / GitHub</span>
+
+        <div class="tech-card" data-skill="72">
+          <div class="tech-icon-wrap git">
+            <i class="fab fa-git-alt"></i>
+          </div>
+          <span class="tech-name">Git / GitHub</span>
+          <div class="tech-bar"><div class="tech-fill" data-w="72"></div></div>
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- ======================================================
-       PROJETOS
-  ====================================================== -->
+  <!-- ============================================================
+       SECTION: PROJETOS
+  ============================================================ -->
   <section id="projetos">
     <div class="container">
-      <div class="section-label reveal">
-        <span class="mono accent">// 03</span>
-        <div class="label-line"></div>
+      <div class="section-header reveal">
+        <span class="section-tag">// 03</span>
+        <h2>Meus <span class="accent">Projetos</span></h2>
+        <div class="section-line"></div>
       </div>
-      <h2 class="section-title reveal">Meus <em>Projetos</em></h2>
 
       <div class="projects-grid">
 
-        <!-- LOGIC -->
-        <article class="project-card reveal">
-          <div class="card-top">
-            <div class="card-num mono accent">01</div>
-            <a href="https://github.com/guiandrade17/LOGIC" target="_blank" class="card-github" title="Ver no GitHub">
-              <i class="fab fa-github"></i>
-            </a>
+        <!-- Card 1: LOGIC -->
+        <div class="project-card reveal">
+          <div class="card-header">
+            <div class="card-icon"><i class="fas fa-terminal"></i></div>
+            <div class="card-links">
+              <a href="https://github.com/guiandrade17/LOGIC" target="_blank" title="GitHub">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
           </div>
           <h3 class="card-title">LOGIC</h3>
-          <p class="card-desc">
-            Lógica de programação com aplicações Console e API Web em C#.
-            Estruturas condicionais, laços e boas práticas.
+          <p class="card-description">
+            Estudo de lógica de programação com aplicações Console e API Web em C#. Inclui estruturas condicionais, laços de repetição e boas práticas de código.
           </p>
           <div class="card-tags">
-            <span class="tag">C#</span>
+            <span class="tag csharp-tag">C#</span>
             <span class="tag">.NET</span>
             <span class="tag">Console App</span>
+            <span class="tag">API Web</span>
           </div>
-          <a href="https://github.com/guiandrade17/LOGIC" target="_blank" class="card-link mono">
-            Ver repositório <i class="fas fa-arrow-right"></i>
+          <a href="https://github.com/guiandrade17/LOGIC" target="_blank" class="card-btn">
+            Ver no GitHub <i class="fas fa-arrow-right"></i>
           </a>
-        </article>
+        </div>
 
-        <!-- JAVA -->
-        <article class="project-card reveal">
-          <div class="card-top">
-            <div class="card-num mono accent">02</div>
-            <a href="https://github.com/guiandrade17/JAVA" target="_blank" class="card-github" title="Ver no GitHub">
-              <i class="fab fa-github"></i>
-            </a>
+        <!-- Card 2: JAVA -->
+        <div class="project-card reveal">
+          <div class="card-header">
+            <div class="card-icon java-icon"><i class="fab fa-java"></i></div>
+            <div class="card-links">
+              <a href="https://github.com/guiandrade17/JAVA" target="_blank" title="GitHub">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
           </div>
           <h3 class="card-title">JAVA</h3>
-          <p class="card-desc">
-            Exercícios fundamentais de Java: sintaxe, lógica, orientação
-            a objetos e atividades práticas do DCE.
+          <p class="card-description">
+            Exercícios e conceitos fundamentais de Java: sintaxe básica, lógica, orientação a objetos e atividades práticas do curso do DCE.
           </p>
           <div class="card-tags">
-            <span class="tag">Java</span>
+            <span class="tag java-tag">Java</span>
             <span class="tag">OOP</span>
             <span class="tag">DCE</span>
           </div>
-          <a href="https://github.com/guiandrade17/JAVA" target="_blank" class="card-link mono">
-            Ver repositório <i class="fas fa-arrow-right"></i>
+          <a href="https://github.com/guiandrade17/JAVA" target="_blank" class="card-btn">
+            Ver no GitHub <i class="fas fa-arrow-right"></i>
           </a>
-        </article>
+        </div>
 
-        <!-- BD -->
-        <article class="project-card reveal">
-          <div class="card-top">
-            <div class="card-num mono accent">03</div>
-            <a href="https://github.com/guiandrade17/BD" target="_blank" class="card-github" title="Ver no GitHub">
-              <i class="fab fa-github"></i>
-            </a>
+        <!-- Card 3: BD -->
+        <div class="project-card reveal">
+          <div class="card-header">
+            <div class="card-icon db-icon"><i class="fas fa-database"></i></div>
+            <div class="card-links">
+              <a href="https://github.com/guiandrade17/BD" target="_blank" title="GitHub">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
           </div>
           <h3 class="card-title">BD – Banco de Dados</h3>
-          <p class="card-desc">
-            Scripts SQL, modelagem e consultas em MySQL.
-            BD I e BD II com estudo de modelos relacionais.
+          <p class="card-description">
+            Scripts SQL, modelagem de dados e consultas em MySQL. BD I e BD II com estudo avançado de modelos e comparações entre sistemas de dados.
           </p>
           <div class="card-tags">
-            <span class="tag">SQL</span>
+            <span class="tag sql-tag">SQL</span>
             <span class="tag">MySQL</span>
             <span class="tag">Modelagem</span>
+            <span class="tag">BD I & II</span>
           </div>
-          <a href="https://github.com/guiandrade17/BD" target="_blank" class="card-link mono">
-            Ver repositório <i class="fas fa-arrow-right"></i>
+          <a href="https://github.com/guiandrade17/BD" target="_blank" class="card-btn">
+            Ver no GitHub <i class="fas fa-arrow-right"></i>
           </a>
-        </article>
+        </div>
 
-        <!-- PYTHON -->
-        <article class="project-card reveal">
-          <div class="card-top">
-            <div class="card-num mono accent">04</div>
-            <a href="https://github.com/guiandrade17" target="_blank" class="card-github" title="Ver no GitHub">
-              <i class="fab fa-github"></i>
-            </a>
+        <!-- Card 4: PYTHON -->
+        <div class="project-card reveal">
+          <div class="card-header">
+            <div class="card-icon py-icon"><i class="fab fa-python"></i></div>
+            <div class="card-links">
+              <a href="https://github.com/guiandrade17" target="_blank" title="GitHub">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
           </div>
           <h3 class="card-title">PYTHON – POO</h3>
-          <p class="card-desc">
-            Programação Orientada a Objetos em Python: classes, atributos,
-            métodos, encapsulamento e exercícios no PyCharm.
+          <p class="card-description">
+            Python com foco em Programação Orientada a Objetos: classes, atributos, métodos, encapsulamento e exercícios práticos desenvolvidos no PyCharm.
           </p>
           <div class="card-tags">
-            <span class="tag">Python</span>
+            <span class="tag py-tag">Python</span>
             <span class="tag">POO</span>
             <span class="tag">PyCharm</span>
           </div>
-          <a href="https://github.com/guiandrade17" target="_blank" class="card-link mono">
-            Ver repositório <i class="fas fa-arrow-right"></i>
+          <a href="https://github.com/guiandrade17" target="_blank" class="card-btn">
+            Ver no GitHub <i class="fas fa-arrow-right"></i>
           </a>
-        </article>
+        </div>
 
-        <!-- FRONT-END (featured) -->
-        <article class="project-card project-featured reveal">
-          <div class="card-top">
-            <div class="card-num mono accent">05</div>
-            <a href="https://github.com/guiandrade17" target="_blank" class="card-github" title="Ver no GitHub">
-              <i class="fab fa-github"></i>
-            </a>
+        <!-- Card 5: Front-end -->
+        <div class="project-card reveal featured">
+          <div class="card-featured-badge">⭐ Destaque</div>
+          <div class="card-header">
+            <div class="card-icon fe-icon"><i class="fas fa-paint-brush"></i></div>
+            <div class="card-links">
+              <a href="https://github.com/guiandrade17" target="_blank" title="GitHub">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
           </div>
-          <div class="featured-label mono">⭐ Destaque</div>
           <h3 class="card-title">Front-end Projects</h3>
-          <p class="card-desc">
-            Mais de 60 exercícios práticos de HTML, CSS e JavaScript.
-            Estruturação de páginas, estilização avançada e interatividade dinâmica com VS Code.
+          <p class="card-description">
+            Mais de 60 exercícios práticos de HTML, CSS e JavaScript no VS Code. Estruturação de páginas, estilização avançada e interatividade dinâmica.
           </p>
           <div class="card-tags">
-            <span class="tag tag-html">HTML5</span>
-            <span class="tag tag-css">CSS3</span>
-            <span class="tag tag-js">JS</span>
+            <span class="tag html-tag">HTML5</span>
+            <span class="tag css-tag">CSS3</span>
+            <span class="tag js-tag">JavaScript</span>
             <span class="tag">VS Code</span>
           </div>
-          <a href="https://github.com/guiandrade17" target="_blank" class="card-link mono">
-            Ver repositório <i class="fas fa-arrow-right"></i>
+          <a href="https://github.com/guiandrade17" target="_blank" class="card-btn">
+            Ver no GitHub <i class="fas fa-arrow-right"></i>
           </a>
-        </article>
+        </div>
 
       </div>
     </div>
   </section>
 
-  <!-- ======================================================
-       CONTATO
-  ====================================================== -->
+  <!-- ============================================================
+       SECTION: CONTATO
+  ============================================================ -->
   <section id="contato">
     <div class="container">
-      <div class="section-label reveal">
-        <span class="mono accent">// 04</span>
-        <div class="label-line"></div>
+      <div class="section-header reveal">
+        <span class="section-tag">// 04</span>
+        <h2>Entre em <span class="accent">Contato</span></h2>
+        <div class="section-line"></div>
       </div>
-      <h2 class="section-title reveal">Entre em <em>Contato</em></h2>
 
       <div class="contato-grid">
         <div class="contato-text reveal">
+          <h3>Vamos conversar?</h3>
           <p>
-            Estou aberto a oportunidades de estágio, projetos colaborativos
-            e conexões na área de tecnologia.
+            Estou aberto a oportunidades de estágio, projetos colaborativos e novas conexões na área de tecnologia. Não hesite em entrar em contato!
           </p>
-          <pre class="code-block mono"><span class="c-kw">const</span> guilherme <span class="c-op">=</span> {
-  status:   <span class="c-str">"disponível"</span>,
-  open_to:  <span class="c-str">"estágios & projetos"</span>,
-  location: <span class="c-str">"Brasília, DF"</span>
-};</pre>
+          <p class="contato-code">
+            <span class="code-keyword">const</span> guilherme = {<br>
+            &nbsp;&nbsp;<span class="code-key">status:</span> <span class="code-str">"disponível"</span>,<br>
+            &nbsp;&nbsp;<span class="code-key">open_to:</span> <span class="code-str">"estágios & projetos"</span>,<br>
+            &nbsp;&nbsp;<span class="code-key">location:</span> <span class="code-str">"Brasília, DF"</span><br>
+            };
+          </p>
         </div>
 
         <div class="contato-links reveal">
-          <a href="https://linkedin.com/in/guilherme-brito-andrade-090b81348" target="_blank" class="contact-row linkedin">
-            <div class="contact-ico"><i class="fab fa-linkedin-in"></i></div>
-            <div class="contact-meta">
-              <span class="contact-platform mono">LinkedIn</span>
+          <a href="https://linkedin.com/in/guilherme-brito-andrade-090b81348" target="_blank" class="contact-card linkedin">
+            <div class="contact-icon"><i class="fab fa-linkedin"></i></div>
+            <div class="contact-info">
+              <span class="contact-platform">LinkedIn</span>
               <span class="contact-handle">guilherme-brito-andrade</span>
             </div>
-            <i class="fas fa-arrow-right contact-arr"></i>
+            <i class="fas fa-external-link-alt contact-arrow"></i>
           </a>
 
-          <a href="https://github.com/guiandrade17" target="_blank" class="contact-row github">
-            <div class="contact-ico"><i class="fab fa-github"></i></div>
-            <div class="contact-meta">
-              <span class="contact-platform mono">GitHub</span>
-              <span class="contact-handle">guiandrade17</span>
-            </div>
-            <i class="fas fa-arrow-right contact-arr"></i>
-          </a>
-
-          <a href="https://instagram.com/guilhermebritoa" target="_blank" class="contact-row instagram">
-            <div class="contact-ico"><i class="fab fa-instagram"></i></div>
-            <div class="contact-meta">
-              <span class="contact-platform mono">Instagram</span>
+          <a href="https://instagram.com/guilhermebritoa" target="_blank" class="contact-card instagram">
+            <div class="contact-icon"><i class="fab fa-instagram"></i></div>
+            <div class="contact-info">
+              <span class="contact-platform">Instagram</span>
               <span class="contact-handle">@guilhermebritoa</span>
             </div>
-            <i class="fas fa-arrow-right contact-arr"></i>
+            <i class="fas fa-external-link-alt contact-arrow"></i>
           </a>
 
-          <a href="mailto:guilhermebritoandrade17@gmail.com" class="contact-row email">
-            <div class="contact-ico"><i class="fas fa-envelope"></i></div>
-            <div class="contact-meta">
-              <span class="contact-platform mono">E-mail</span>
+          <a href="mailto:guilhermebritoandrade17@gmail.com" class="contact-card email">
+            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+            <div class="contact-info">
+              <span class="contact-platform">E-mail</span>
               <span class="contact-handle">guilhermebritoandrade17@gmail.com</span>
             </div>
-            <i class="fas fa-arrow-right contact-arr"></i>
+            <i class="fas fa-external-link-alt contact-arrow"></i>
+          </a>
+
+          <a href="https://github.com/guiandrade17" target="_blank" class="contact-card github">
+            <div class="contact-icon"><i class="fab fa-github"></i></div>
+            <div class="contact-info">
+              <span class="contact-platform">GitHub</span>
+              <span class="contact-handle">guiandrade17</span>
+            </div>
+            <i class="fas fa-external-link-alt contact-arrow"></i>
           </a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ======================================================
-       AGENDAR
-  ====================================================== -->
-  <section id="agendar">
-    <div class="container">
-      <div class="section-label reveal">
-        <span class="mono accent">// 05</span>
-        <div class="label-line"></div>
-      </div>
-      <h2 class="section-title reveal">Vamos <em>Trabalhar Juntos?</em></h2>
-      <p class="agendar-sub reveal">
-        Estou disponível para oportunidades, projetos e conexões em tecnologia.
-        Escolha um horário e agende uma conversa.
-      </p>
-
-      <div class="schedule-wrap reveal">
-        <!-- Days -->
-        <div class="schedule-left">
-          <h4 class="schedule-section-title mono"><i class="fas fa-calendar-week"></i> Dias disponíveis</h4>
-          <div class="days-grid">
-            <button class="day-btn active" data-day="seg">Seg</button>
-            <button class="day-btn active" data-day="ter">Ter</button>
-            <button class="day-btn active" data-day="qua">Qua</button>
-            <button class="day-btn active" data-day="qui">Qui</button>
-            <button class="day-btn active" data-day="sex">Sex</button>
-            <button class="day-btn disabled" data-day="sab" disabled>Sáb</button>
-            <button class="day-btn disabled" data-day="dom" disabled>Dom</button>
-          </div>
-
-          <h4 class="schedule-section-title mono"><i class="fas fa-clock"></i> Horários</h4>
-          <div class="slots-grid" id="slots-grid">
-            <!-- slots gerados via JS -->
-          </div>
-        </div>
-
-        <!-- Summary -->
-        <div class="schedule-right">
-          <div class="booking-summary" id="booking-summary">
-            <div class="booking-icon"><i class="fas fa-calendar-check"></i></div>
-            <h4>Selecione dia e horário</h4>
-            <p class="mono text-dim">Escolha ao lado para ver o resumo</p>
-          </div>
-          <div class="booking-confirm" id="booking-confirm" style="display:none;">
-            <div class="booking-icon confirmed"><i class="fas fa-check-circle"></i></div>
-            <h4>Horário selecionado</h4>
-            <div class="booking-detail mono">
-              <span id="selected-day-label"></span>
-              <span class="accent" id="selected-time-label"></span>
-            </div>
-            <a id="booking-link" href="mailto:guilhermebritoandrade17@gmail.com" class="btn-book">
-              <i class="fas fa-paper-plane"></i> Confirmar via e-mail
-            </a>
-            <button class="btn-reset mono" id="btn-reset">↩ Recomeçar</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ======================================================
+  <!-- ============================================================
        FOOTER
-  ====================================================== -->
+  ============================================================ -->
   <footer id="footer">
     <div class="footer-inner">
-      <div class="footer-logo mono">
-        <span class="accent">gb</span>_andrade
+      <div class="footer-logo">
+        <span class="logo-bracket">&lt;</span>GB<span class="logo-bracket">/&gt;</span>
       </div>
-      <p class="footer-copy">
-        Desenvolvido  <span class="accent"></span> por Guilherme Brito · 2026
+      <p class="footer-text">
+        Desenvolvido com <span class="accent">❤</span> por Guilherme Brito · © 2026
       </p>
-      <p class="footer-stack mono">HTML · CSS · JavaScript · GitHub Pages</p>
+      <p class="footer-sub">HTML · CSS · JavaScript · GitHub Pages</p>
     </div>
+    <div class="footer-glow"></div>
   </footer>
 
   <script src="script.js"></script>
