@@ -3,315 +3,541 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Guilherme Brito – Software Engineer</title>
-  <link rel="stylesheet" href="style.css" />
+
+  <!-- SEO -->
+  <title>Guilherme Brito – Software Engineer | Brasília, DF</title>
+  <meta name="description" content="Portfólio de Guilherme Brito, estudante de Engenharia de Software no CEUB, Brasília. Front-end Developer com foco em HTML, CSS, JavaScript, Java, C# e SQL."/>
+  <meta name="keywords" content="Guilherme Brito, software engineer, front-end, developer, Brasília, CEUB, portfólio, JavaScript, C#, Java, Python"/>
+  <meta name="author" content="Guilherme Brito Andrade"/>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Guilherme Brito – Software Engineer"/>
+  <meta property="og:description" content="Estudante de Engenharia de Software apaixonado por código, front-end e boas práticas."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:locale" content="pt_BR"/>
+
+  <!-- Fonts: Syne + JetBrains Mono (mantidas) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/devicons/1.8.0/css/devicons.min.css"/>
+
+  <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <div id="loader">
+  <!-- ===== LOADER ===== -->
+  <div id="loader" role="status" aria-label="Carregando portfólio">
     <div class="loader-inner">
-      <div class="loader-ring"></div>
-      <div class="loader-ring"></div>
-      <div class="loader-ring"></div>
-      <span class="loader-text">GB_</span>
+      <svg class="loader-svg" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle class="loader-track"   cx="40" cy="40" r="34" stroke-width="2"/>
+        <circle class="loader-spin-1"  cx="40" cy="40" r="34" stroke-width="2"/>
+        <circle class="loader-track"   cx="40" cy="40" r="22" stroke-width="1.5" opacity="0.4"/>
+        <circle class="loader-spin-2"  cx="40" cy="40" r="22" stroke-width="1.5"/>
+      </svg>
+      <span class="loader-text" aria-hidden="true">GB_</span>
     </div>
+    <p class="loader-sub" aria-hidden="true">// iniciando sistema</p>
   </div>
 
-  <canvas id="particles-canvas"></canvas>
+  <!-- ===== CANVAS PARTÍCULAS ===== -->
+  <canvas id="particles-canvas" aria-hidden="true"></canvas>
 
-  <nav id="navbar">
-    <div class="nav-logo">
-      <span class="logo-bracket">&lt;</span>GB<span class="logo-bracket">/&gt;</span>
+  <!-- ===== NAVBAR ===== -->
+  <nav id="navbar" role="navigation" aria-label="Navegação principal">
+    <div class="nav-logo" aria-label="GB – Guilherme Brito">
+      <span class="logo-bracket" aria-hidden="true">&lt;</span>GB<span class="logo-bracket" aria-hidden="true">/&gt;</span>
     </div>
-    <button class="hamburger" id="hamburger" aria-label="Menu">
+    <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-links">
       <span></span><span></span><span></span>
     </button>
-    <ul class="nav-links" id="nav-links">
-      <li><a href="#home" class="nav-link">Home</a></li>
-      <li><a href="#sobre" class="nav-link">Sobre</a></li>
-      <li><a href="#tecnologias" class="nav-link">Tecnologias</a></li>
-      <li><a href="#projetos" class="nav-link">Projetos</a></li>
-      <li><a href="#contato" class="nav-link">Contato</a></li>
+    <ul class="nav-links" id="nav-links" role="list">
+      <li><a href="#home"        class="nav-link" aria-label="Ir para Home">Home</a></li>
+      <li><a href="#sobre"       class="nav-link" aria-label="Ir para Sobre">Sobre</a></li>
+      <li><a href="#tecnologias" class="nav-link" aria-label="Ir para Tecnologias">Tecnologias</a></li>
+      <li><a href="#projetos"    class="nav-link" aria-label="Ir para Projetos">Projetos</a></li>
+      <li><a href="#contato"     class="nav-link" aria-label="Ir para Contato">Contato</a></li>
     </ul>
   </nav>
 
-  <section id="home">
+  <!-- ===== HERO ===== -->
+  <section id="home" aria-label="Apresentação">
+    <!-- Grid de fundo decorativo -->
+    <div class="hero-grid" aria-hidden="true"></div>
+    <!-- Orbs decorativos -->
+    <div class="hero-orb orb-1" aria-hidden="true"></div>
+    <div class="hero-orb orb-2" aria-hidden="true"></div>
+
     <div class="home-content">
-      <div class="avatar-wrapper reveal">
+      <!-- Avatar -->
+      <div class="avatar-wrapper reveal" aria-hidden="true">
         <div class="avatar-frame">
           <div class="avatar-photo-wrap">
             <img
               src="Foto_-_Guilherme.png"
               alt="Guilherme Brito Andrade"
               class="avatar-photo"
+              width="160" height="160"
               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
             />
-            <div class="avatar-initials" style="display:none;">GB</div>
+            <div class="avatar-initials" style="display:none;" aria-label="Iniciais GB">GB</div>
           </div>
-          <div class="avatar-ring r1"></div>
-          <div class="avatar-ring r2"></div>
-          <div class="avatar-ring r3"></div>
+          <!-- Anéis pulsantes -->
+          <div class="avatar-ring r1" aria-hidden="true"></div>
+          <div class="avatar-ring r2" aria-hidden="true"></div>
+          <div class="avatar-ring r3" aria-hidden="true"></div>
+          <!-- Badge de status -->
+          <div class="avatar-badge" aria-label="Status: disponível">
+            <span class="badge-dot"></span>
+            <span class="badge-label">Disponível</span>
+          </div>
         </div>
       </div>
 
+      <!-- Texto principal -->
       <div class="home-text reveal">
-        <p class="home-greeting">// Olá, mundo! 👋</p>
-        <h1 class="home-name">Guilherme<br><span class="accent">Brito</span></h1>
-        <p class="home-role">
-          <span class="typing-prefix">$ </span>
-          <span id="typed-text"></span><span class="cursor">|</span>
+        <p class="home-greeting" aria-hidden="true">// Olá, mundo! 👋</p>
+        <h1 class="home-name">
+          Guilherme<br>
+          <span class="accent name-accent">Brito</span>
+          <span class="name-underline" aria-hidden="true"></span>
+        </h1>
+        <p class="home-role" aria-live="polite">
+          <span class="typing-prefix" aria-hidden="true">$ </span>
+          <span id="typed-text" aria-label="Função atual em rotação"></span><span class="cursor" aria-hidden="true">|</span>
         </p>
         <p class="home-sub">
           Estudante de <span class="accent">Engenharia de Software</span> no CEUB · 18 anos ·<br>
           Apaixonado por código, futebol e aprender coisas novas.
         </p>
+
+        <!-- Metadados rápidos -->
+        <div class="home-meta" aria-label="Informações rápidas">
+          <span class="meta-item"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Brasília, DF</span>
+          <span class="meta-sep" aria-hidden="true">·</span>
+          <span class="meta-item"><i class="fas fa-graduation-cap" aria-hidden="true"></i> CEUB · 1º Ano</span>
+          <span class="meta-sep" aria-hidden="true">·</span>
+          <span class="meta-item"><i class="fas fa-circle status-dot" aria-hidden="true"></i> Open to Work</span>
+        </div>
+
         <div class="home-cta">
-          <a href="https://github.com/guiandrade17" target="_blank" class="btn btn-primary">
-            <i class="fab fa-github"></i> GitHub
+          <a href="https://github.com/guiandrade17" target="_blank" rel="noopener noreferrer" class="btn btn-primary" aria-label="Acessar GitHub de Guilherme Brito">
+            <i class="fab fa-github" aria-hidden="true"></i> GitHub
           </a>
-          <a href="https://linkedin.com/in/guilherme-brito-andrade-090b81348" target="_blank" class="btn btn-outline">
-            <i class="fab fa-linkedin"></i> LinkedIn
+          <a href="https://linkedin.com/in/guilherme-brito-andrade-090b81348" target="_blank" rel="noopener noreferrer" class="btn btn-outline" aria-label="Acessar LinkedIn de Guilherme Brito">
+            <i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn
           </a>
-          <a href="#contato" class="btn btn-ghost">
-            <i class="fas fa-envelope"></i> Contato
+          <a href="#contato" class="btn btn-ghost" aria-label="Ir para seção de contato">
+            <i class="fas fa-envelope" aria-hidden="true"></i> Contato
           </a>
         </div>
       </div>
     </div>
 
-    <div class="scroll-indicator">
+    <div class="scroll-indicator" aria-hidden="true">
       <span>scroll</span>
       <div class="scroll-line"></div>
     </div>
   </section>
 
-  <section id="sobre">
+  <!-- ===== SOBRE ===== -->
+  <section id="sobre" aria-labelledby="sobre-heading">
     <div class="container">
       <div class="section-header reveal">
-        <span class="section-tag">// 01</span>
-        <h2>Sobre <span class="accent">Mim</span></h2>
-        <div class="section-line"></div>
+        <span class="section-tag" aria-hidden="true">// 01</span>
+        <h2 id="sobre-heading">Sobre <span class="accent">Mim</span></h2>
+        <div class="section-line" aria-hidden="true"></div>
       </div>
+
       <div class="sobre-grid">
+        <!-- Texto -->
         <div class="sobre-text reveal">
           <p>Sou um estudante de <strong>Engenharia de Software</strong> no <strong>CEUB (Centro Universitário de Brasília)</strong>, com foco em construir soluções tecnológicas eficientes e bem estruturadas.</p>
           <p>Minha jornada na programação começou com curiosidade e se transformou em paixão. Hoje trabalho com diversas tecnologias — de lógica básica em C# a bancos de dados relacionais e desenvolvimento front-end.</p>
           <p>Meu objetivo é me tornar um <strong>Engenheiro de Software</strong> completo, capaz de construir sistemas robustos, escaláveis e com excelente experiência de usuário.</p>
-          <div class="info-chips">
-            <span class="chip"><i class="fas fa-graduation-cap"></i> CEUB – Eng. Software</span>
-            <span class="chip"><i class="fas fa-map-marker-alt"></i> Brasília, DF</span>
-            <span class="chip"><i class="fas fa-code"></i> Open to opportunities</span>
+          <div class="info-chips" role="list" aria-label="Informações pessoais">
+            <span class="chip" role="listitem"><i class="fas fa-graduation-cap" aria-hidden="true"></i> CEUB – Eng. Software</span>
+            <span class="chip" role="listitem"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Brasília, DF</span>
+            <span class="chip chip-available" role="listitem"><i class="fas fa-circle" aria-hidden="true"></i> Open to opportunities</span>
           </div>
         </div>
-        <div class="sobre-stats reveal">
-          <div class="stat-card">
-            <span class="stat-number">5<span class="accent">+</span></span>
-            <span class="stat-label">Linguagens</span>
+
+        <!-- Stats + Timeline -->
+        <div class="sobre-right reveal">
+          <div class="sobre-stats" role="list" aria-label="Estatísticas">
+            <div class="stat-card" role="listitem">
+              <span class="stat-number">5<span class="accent">+</span></span>
+              <span class="stat-label">Linguagens</span>
+            </div>
+            <div class="stat-card" role="listitem">
+              <span class="stat-number">60<span class="accent">+</span></span>
+              <span class="stat-label">Exercícios Front-end</span>
+            </div>
+            <div class="stat-card" role="listitem">
+              <span class="stat-number">4<span class="accent">+</span></span>
+              <span class="stat-label">Repositórios</span>
+            </div>
+            <div class="stat-card" role="listitem">
+              <span class="stat-number">1<span class="accent">st</span></span>
+              <span class="stat-label">Ano na Faculdade</span>
+            </div>
           </div>
-          <div class="stat-card">
-            <span class="stat-number">60<span class="accent">+</span></span>
-            <span class="stat-label">Exercícios Front-end</span>
-          </div>
-          <div class="stat-card">
-            <span class="stat-number">4<span class="accent">+</span></span>
-            <span class="stat-label">Repositórios</span>
-          </div>
-          <div class="stat-card">
-            <span class="stat-number">1<span class="accent">st</span></span>
-            <span class="stat-label">Ano na Faculdade</span>
+
+          <!-- Timeline -->
+          <div class="timeline" aria-label="Trajetória">
+            <h3 class="timeline-title">Trajetória</h3>
+            <div class="timeline-items">
+              <div class="timeline-item">
+                <div class="tl-dot" aria-hidden="true"></div>
+                <div class="tl-content">
+                  <span class="tl-year">2024</span>
+                  <p class="tl-desc">Primeiros passos com HTML, CSS e lógica de programação</p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="tl-dot tl-dot--active" aria-hidden="true"></div>
+                <div class="tl-content">
+                  <span class="tl-year">2025</span>
+                  <p class="tl-desc">Ingressei em Engenharia de Software no CEUB · Projetos em C#, Java, Python e SQL</p>
+                </div>
+              </div>
+              <div class="timeline-item timeline-item--future">
+                <div class="tl-dot tl-dot--future" aria-hidden="true"></div>
+                <div class="tl-content">
+                  <span class="tl-year">2026 →</span>
+                  <p class="tl-desc">Buscando estágio · Expandindo para React e back-end</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="tecnologias">
+  <!-- ===== TECNOLOGIAS ===== -->
+  <section id="tecnologias" aria-labelledby="tech-heading">
     <div class="container">
       <div class="section-header reveal">
-        <span class="section-tag">// 02</span>
-        <h2>Tech <span class="accent">Stack</span></h2>
-        <div class="section-line"></div>
+        <span class="section-tag" aria-hidden="true">// 02</span>
+        <h2 id="tech-heading">Tech <span class="accent">Stack</span></h2>
+        <div class="section-line" aria-hidden="true"></div>
       </div>
-      <div class="tech-grid reveal">
-        <div class="tech-card"><div class="tech-icon-wrap html"><i class="fab fa-html5"></i></div><span class="tech-name">HTML5</span><div class="tech-bar"><div class="tech-fill" data-w="85"></div></div></div>
-        <div class="tech-card"><div class="tech-icon-wrap css"><i class="fab fa-css3-alt"></i></div><span class="tech-name">CSS3</span><div class="tech-bar"><div class="tech-fill" data-w="80"></div></div></div>
-        <div class="tech-card"><div class="tech-icon-wrap js"><i class="fab fa-js-square"></i></div><span class="tech-name">JavaScript</span><div class="tech-bar"><div class="tech-fill" data-w="70"></div></div></div>
-        <div class="tech-card"><div class="tech-icon-wrap python"><i class="fab fa-python"></i></div><span class="tech-name">Python</span><div class="tech-bar"><div class="tech-fill" data-w="65"></div></div></div>
-        <div class="tech-card"><div class="tech-icon-wrap java"><i class="fab fa-java"></i></div><span class="tech-name">Java</span><div class="tech-bar"><div class="tech-fill" data-w="60"></div></div></div>
-        <div class="tech-card"><div class="tech-icon-wrap csharp"><i class="fas fa-code"></i></div><span class="tech-name">C#</span><div class="tech-bar"><div class="tech-fill" data-w="70"></div></div></div>
-        <div class="tech-card"><div class="tech-icon-wrap sql"><i class="fas fa-database"></i></div><span class="tech-name">SQL</span><div class="tech-bar"><div class="tech-fill" data-w="75"></div></div></div>
-        <div class="tech-card"><div class="tech-icon-wrap git"><i class="fab fa-git-alt"></i></div><span class="tech-name">Git / GitHub</span><div class="tech-bar"><div class="tech-fill" data-w="72"></div></div></div>
+      <div class="tech-grid reveal" role="list" aria-label="Tecnologias dominadas">
+
+        <article class="tech-card" role="listitem" aria-label="HTML5">
+          <div class="tech-icon-wrap html" aria-hidden="true"><i class="fab fa-html5"></i></div>
+          <span class="tech-name">HTML5</span>
+          <div class="tech-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" aria-label="Nível HTML5: 85%">
+            <div class="tech-fill" data-w="85"></div>
+          </div>
+          <span class="tech-pct" aria-hidden="true">85%</span>
+        </article>
+
+        <article class="tech-card" role="listitem" aria-label="CSS3">
+          <div class="tech-icon-wrap css" aria-hidden="true"><i class="fab fa-css3-alt"></i></div>
+          <span class="tech-name">CSS3</span>
+          <div class="tech-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" aria-label="Nível CSS3: 80%">
+            <div class="tech-fill" data-w="80"></div>
+          </div>
+          <span class="tech-pct" aria-hidden="true">80%</span>
+        </article>
+
+        <article class="tech-card" role="listitem" aria-label="JavaScript">
+          <div class="tech-icon-wrap js" aria-hidden="true"><i class="fab fa-js-square"></i></div>
+          <span class="tech-name">JavaScript</span>
+          <div class="tech-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" aria-label="Nível JavaScript: 70%">
+            <div class="tech-fill" data-w="70"></div>
+          </div>
+          <span class="tech-pct" aria-hidden="true">70%</span>
+        </article>
+
+        <article class="tech-card" role="listitem" aria-label="Python">
+          <div class="tech-icon-wrap python" aria-hidden="true"><i class="fab fa-python"></i></div>
+          <span class="tech-name">Python</span>
+          <div class="tech-bar" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" aria-label="Nível Python: 65%">
+            <div class="tech-fill" data-w="65"></div>
+          </div>
+          <span class="tech-pct" aria-hidden="true">65%</span>
+        </article>
+
+        <article class="tech-card" role="listitem" aria-label="Java">
+          <div class="tech-icon-wrap java" aria-hidden="true"><i class="fab fa-java"></i></div>
+          <span class="tech-name">Java</span>
+          <div class="tech-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" aria-label="Nível Java: 60%">
+            <div class="tech-fill" data-w="60"></div>
+          </div>
+          <span class="tech-pct" aria-hidden="true">60%</span>
+        </article>
+
+        <article class="tech-card" role="listitem" aria-label="C Sharp">
+          <div class="tech-icon-wrap csharp" aria-hidden="true"><i class="fas fa-code"></i></div>
+          <span class="tech-name">C#</span>
+          <div class="tech-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" aria-label="Nível C#: 70%">
+            <div class="tech-fill" data-w="70"></div>
+          </div>
+          <span class="tech-pct" aria-hidden="true">70%</span>
+        </article>
+
+        <article class="tech-card" role="listitem" aria-label="SQL">
+          <div class="tech-icon-wrap sql" aria-hidden="true"><i class="fas fa-database"></i></div>
+          <span class="tech-name">SQL</span>
+          <div class="tech-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" aria-label="Nível SQL: 75%">
+            <div class="tech-fill" data-w="75"></div>
+          </div>
+          <span class="tech-pct" aria-hidden="true">75%</span>
+        </article>
+
+        <article class="tech-card" role="listitem" aria-label="Git e GitHub">
+          <div class="tech-icon-wrap git" aria-hidden="true"><i class="fab fa-git-alt"></i></div>
+          <span class="tech-name">Git / GitHub</span>
+          <div class="tech-bar" role="progressbar" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100" aria-label="Nível Git/GitHub: 72%">
+            <div class="tech-fill" data-w="72"></div>
+          </div>
+          <span class="tech-pct" aria-hidden="true">72%</span>
+        </article>
+
       </div>
     </div>
   </section>
 
-  <section id="projetos">
+  <!-- ===== PROJETOS ===== -->
+  <section id="projetos" aria-labelledby="projetos-heading">
     <div class="container">
       <div class="section-header reveal">
-        <span class="section-tag">// 03</span>
-        <h2>Meus <span class="accent">Projetos</span></h2>
-        <div class="section-line"></div>
+        <span class="section-tag" aria-hidden="true">// 03</span>
+        <h2 id="projetos-heading">Meus <span class="accent">Projetos</span></h2>
+        <div class="section-line" aria-hidden="true"></div>
       </div>
       <div class="projects-grid">
 
-        <div class="project-card reveal">
+        <!-- LOGIC -->
+        <article class="project-card reveal">
+          <div class="card-glow" aria-hidden="true"></div>
           <div class="card-header">
-            <div class="card-icon"><i class="fas fa-terminal"></i></div>
-            <div class="card-links"><a href="https://github.com/guiandrade17/LOGIC" target="_blank"><i class="fab fa-github"></i></a></div>
+            <div class="card-icon"><i class="fas fa-terminal" aria-hidden="true"></i></div>
+            <div class="card-links">
+              <a href="https://github.com/guiandrade17/LOGIC" target="_blank" rel="noopener noreferrer" aria-label="Ver repositório LOGIC no GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+            </div>
           </div>
           <h3 class="card-title">LOGIC</h3>
           <p class="card-description">Estudo de lógica de programação com aplicações Console e API Web em C#. Inclui estruturas condicionais, laços de repetição e boas práticas de código.</p>
-          <div class="card-tags">
-            <span class="tag csharp-tag">C#</span><span class="tag">.NET</span><span class="tag">Console App</span><span class="tag">API Web</span>
+          <div class="card-tags" aria-label="Tecnologias usadas">
+            <span class="tag csharp-tag">C#</span>
+            <span class="tag">.NET</span>
+            <span class="tag">Console App</span>
+            <span class="tag">API Web</span>
           </div>
-          <a href="https://github.com/guiandrade17/LOGIC" target="_blank" class="card-btn">Ver no GitHub <i class="fas fa-arrow-right"></i></a>
-        </div>
+          <a href="https://github.com/guiandrade17/LOGIC" target="_blank" rel="noopener noreferrer" class="card-btn" aria-label="Ver projeto LOGIC no GitHub">
+            Ver no GitHub <i class="fas fa-arrow-right" aria-hidden="true"></i>
+          </a>
+        </article>
 
-        <div class="project-card reveal">
+        <!-- JAVA -->
+        <article class="project-card reveal">
+          <div class="card-glow card-glow--java" aria-hidden="true"></div>
           <div class="card-header">
-            <div class="card-icon java-icon"><i class="fab fa-java"></i></div>
-            <div class="card-links"><a href="https://github.com/guiandrade17/JAVA" target="_blank"><i class="fab fa-github"></i></a></div>
+            <div class="card-icon java-icon"><i class="fab fa-java" aria-hidden="true"></i></div>
+            <div class="card-links">
+              <a href="https://github.com/guiandrade17/JAVA" target="_blank" rel="noopener noreferrer" aria-label="Ver repositório JAVA no GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+            </div>
           </div>
           <h3 class="card-title">JAVA</h3>
           <p class="card-description">Exercícios e conceitos fundamentais de Java: sintaxe básica, lógica, orientação a objetos e atividades práticas do curso do DCE.</p>
-          <div class="card-tags">
-            <span class="tag java-tag">Java</span><span class="tag">OOP</span><span class="tag">DCE</span>
+          <div class="card-tags" aria-label="Tecnologias usadas">
+            <span class="tag java-tag">Java</span>
+            <span class="tag">OOP</span>
+            <span class="tag">DCE</span>
           </div>
-          <a href="https://github.com/guiandrade17/JAVA" target="_blank" class="card-btn">Ver no GitHub <i class="fas fa-arrow-right"></i></a>
-        </div>
+          <a href="https://github.com/guiandrade17/JAVA" target="_blank" rel="noopener noreferrer" class="card-btn" aria-label="Ver projeto JAVA no GitHub">
+            Ver no GitHub <i class="fas fa-arrow-right" aria-hidden="true"></i>
+          </a>
+        </article>
 
-        <div class="project-card reveal">
+        <!-- BD -->
+        <article class="project-card reveal">
+          <div class="card-glow card-glow--sql" aria-hidden="true"></div>
           <div class="card-header">
-            <div class="card-icon db-icon"><i class="fas fa-database"></i></div>
-            <div class="card-links"><a href="https://github.com/guiandrade17/BD" target="_blank"><i class="fab fa-github"></i></a></div>
+            <div class="card-icon db-icon"><i class="fas fa-database" aria-hidden="true"></i></div>
+            <div class="card-links">
+              <a href="https://github.com/guiandrade17/BD" target="_blank" rel="noopener noreferrer" aria-label="Ver repositório BD no GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+            </div>
           </div>
           <h3 class="card-title">BD – Banco de Dados</h3>
           <p class="card-description">Scripts SQL, modelagem de dados e consultas em MySQL. BD I e BD II com estudo avançado de modelos e comparações entre sistemas de dados.</p>
-          <div class="card-tags">
-            <span class="tag sql-tag">SQL</span><span class="tag">MySQL</span><span class="tag">Modelagem</span><span class="tag">BD I & II</span>
+          <div class="card-tags" aria-label="Tecnologias usadas">
+            <span class="tag sql-tag">SQL</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">Modelagem</span>
+            <span class="tag">BD I &amp; II</span>
           </div>
-          <a href="https://github.com/guiandrade17/BD" target="_blank" class="card-btn">Ver no GitHub <i class="fas fa-arrow-right"></i></a>
-        </div>
+          <a href="https://github.com/guiandrade17/BD" target="_blank" rel="noopener noreferrer" class="card-btn" aria-label="Ver projeto BD no GitHub">
+            Ver no GitHub <i class="fas fa-arrow-right" aria-hidden="true"></i>
+          </a>
+        </article>
 
-        <div class="project-card reveal">
+        <!-- PYTHON POO -->
+        <article class="project-card reveal">
+          <div class="card-glow card-glow--py" aria-hidden="true"></div>
           <div class="card-header">
-            <div class="card-icon py-icon"><i class="fab fa-python"></i></div>
-            <div class="card-links"><a href="https://github.com/guiandrade17" target="_blank"><i class="fab fa-github"></i></a></div>
+            <div class="card-icon py-icon"><i class="fab fa-python" aria-hidden="true"></i></div>
+            <div class="card-links">
+              <a href="https://github.com/guiandrade17" target="_blank" rel="noopener noreferrer" aria-label="Ver GitHub de Guilherme Brito"><i class="fab fa-github" aria-hidden="true"></i></a>
+            </div>
           </div>
           <h3 class="card-title">PYTHON – POO</h3>
           <p class="card-description">Python com foco em Programação Orientada a Objetos: classes, atributos, métodos, encapsulamento e exercícios práticos desenvolvidos no PyCharm.</p>
-          <div class="card-tags">
-            <span class="tag py-tag">Python</span><span class="tag">POO</span><span class="tag">PyCharm</span>
+          <div class="card-tags" aria-label="Tecnologias usadas">
+            <span class="tag py-tag">Python</span>
+            <span class="tag">POO</span>
+            <span class="tag">PyCharm</span>
           </div>
-          <a href="https://github.com/guiandrade17" target="_blank" class="card-btn">Ver no GitHub <i class="fas fa-arrow-right"></i></a>
-        </div>
+          <a href="https://github.com/guiandrade17" target="_blank" rel="noopener noreferrer" class="card-btn" aria-label="Ver perfil no GitHub">
+            Ver no GitHub <i class="fas fa-arrow-right" aria-hidden="true"></i>
+          </a>
+        </article>
 
-        <div class="project-card reveal featured">
-          <div class="card-featured-badge">⭐ Destaque</div>
+        <!-- FRONT-END (destaque) -->
+        <article class="project-card reveal featured" aria-label="Projeto em destaque">
+          <div class="card-featured-badge" aria-label="Projeto destaque">⭐ Destaque</div>
+          <div class="card-glow card-glow--fe" aria-hidden="true"></div>
           <div class="card-header">
-            <div class="card-icon fe-icon"><i class="fas fa-paint-brush"></i></div>
-            <div class="card-links"><a href="https://github.com/guiandrade17/POO" target="_blank"><i class="fab fa-github"></i></a></div>
+            <div class="card-icon fe-icon"><i class="fas fa-paint-brush" aria-hidden="true"></i></div>
+            <div class="card-links">
+              <a href="https://github.com/guiandrade17/DI" target="_blank" rel="noopener noreferrer" aria-label="Ver repositório Front-end no GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+            </div>
           </div>
           <h3 class="card-title">Front-end Projects</h3>
-          <p class="card-description">Mais de 60 exercícios práticos de HTML, CSS e JavaScript no VS Code. Estruturação de páginas, estilização avançada e interatividade dinâmica.</p>
-          <div class="card-tags">
-            <span class="tag html-tag">HTML5</span><span class="tag css-tag">CSS3</span><span class="tag js-tag">JavaScript</span><span class="tag">VS Code</span>
+          <p class="card-description">Mais de 60 exercícios práticos de HTML, CSS e JavaScript no VS Code. Estruturação de páginas, estilização avançada e interatividade dinâmica — meu maior acervo de prática visual.</p>
+          <div class="card-tags" aria-label="Tecnologias usadas">
+            <span class="tag html-tag">HTML5</span>
+            <span class="tag css-tag">CSS3</span>
+            <span class="tag js-tag">JavaScript</span>
+            <span class="tag">VS Code</span>
           </div>
-          <a href="https://github.com/guiandrade17/DI" target="_blank" class="card-btn">Ver no GitHub <i class="fas fa-arrow-right"></i></a>
-        </div>
+          <a href="https://github.com/guiandrade17/DI" target="_blank" rel="noopener noreferrer" class="card-btn" aria-label="Ver projeto Front-end no GitHub">
+            Ver no GitHub <i class="fas fa-arrow-right" aria-hidden="true"></i>
+          </a>
+        </article>
 
       </div>
     </div>
   </section>
 
-  <section id="contato">
+  <!-- ===== CONTATO ===== -->
+  <section id="contato" aria-labelledby="contato-heading">
     <div class="container">
       <div class="section-header reveal">
-        <span class="section-tag">// 04</span>
-        <h2>Entre em <span class="accent">Contato</span></h2>
-        <div class="section-line"></div>
+        <span class="section-tag" aria-hidden="true">// 04</span>
+        <h2 id="contato-heading">Entre em <span class="accent">Contato</span></h2>
+        <div class="section-line" aria-hidden="true"></div>
       </div>
 
       <div class="contato-grid">
+        <!-- Texto + bloco de código -->
         <div class="contato-text reveal">
           <h3>Vamos conversar?</h3>
           <p>Estou aberto a oportunidades de estágio, projetos colaborativos e novas conexões na área de tecnologia. Não hesite em entrar em contato!</p>
-          <p class="contato-code">
-            <span class="code-keyword">const</span> guilherme = {<br>
-            &nbsp;&nbsp;<span class="code-key">status:</span> <span class="code-str">"disponível"</span>,<br>
-            &nbsp;&nbsp;<span class="code-key">open_to:</span> <span class="code-str">"estágios & projetos"</span>,<br>
-            &nbsp;&nbsp;<span class="code-key">location:</span> <span class="code-str">"Brasília, DF"</span><br>
-            };
-          </p>
+          <div class="contato-code" role="code" aria-label="Trecho de código representando disponibilidade">
+            <div class="code-topbar" aria-hidden="true">
+              <span class="code-dot red"></span>
+              <span class="code-dot yellow"></span>
+              <span class="code-dot green"></span>
+              <span class="code-filename">status.js</span>
+            </div>
+            <pre class="code-body">
+<span class="code-keyword">const</span> <span class="code-var">guilherme</span> = {
+  <span class="code-key">status</span>: <span class="code-str">"disponível"</span>,
+  <span class="code-key">open_to</span>: <span class="code-str">"estágios &amp; projetos"</span>,
+  <span class="code-key">location</span>: <span class="code-str">"Brasília, DF"</span>,
+  <span class="code-key">response_time</span>: <span class="code-str">"&lt; 24h"</span>
+};</pre>
+          </div>
         </div>
 
-        <div class="contato-links reveal">
-          <a href="https://linkedin.com/in/guilherme-brito-andrade-090b81348" target="_blank" class="contact-card linkedin">
-            <div class="contact-icon"><i class="fab fa-linkedin"></i></div>
-            <div class="contact-info"><span class="contact-platform">LinkedIn</span><span class="contact-handle">guilherme-brito-andrade</span></div>
-            <i class="fas fa-external-link-alt contact-arrow"></i>
+        <!-- Cards sociais -->
+        <div class="contato-links reveal" role="list" aria-label="Links de contato">
+          <a href="https://linkedin.com/in/guilherme-brito-andrade-090b81348" target="_blank" rel="noopener noreferrer" class="contact-card linkedin" role="listitem" aria-label="LinkedIn: guilherme-brito-andrade">
+            <div class="contact-icon"><i class="fab fa-linkedin" aria-hidden="true"></i></div>
+            <div class="contact-info">
+              <span class="contact-platform">LinkedIn</span>
+              <span class="contact-handle">guilherme-brito-andrade</span>
+            </div>
+            <i class="fas fa-arrow-up-right-from-square contact-arrow" aria-hidden="true"></i>
           </a>
-          <a href="https://instagram.com/guilhermebritoa" target="_blank" class="contact-card instagram">
-            <div class="contact-icon"><i class="fab fa-instagram"></i></div>
-            <div class="contact-info"><span class="contact-platform">Instagram</span><span class="contact-handle">@guilhermebritoa</span></div>
-            <i class="fas fa-external-link-alt contact-arrow"></i>
+          <a href="https://instagram.com/guilhermebritoa" target="_blank" rel="noopener noreferrer" class="contact-card instagram" role="listitem" aria-label="Instagram: @guilhermebritoa">
+            <div class="contact-icon"><i class="fab fa-instagram" aria-hidden="true"></i></div>
+            <div class="contact-info">
+              <span class="contact-platform">Instagram</span>
+              <span class="contact-handle">@guilhermebritoa</span>
+            </div>
+            <i class="fas fa-arrow-up-right-from-square contact-arrow" aria-hidden="true"></i>
           </a>
-          <a href="mailto:guilhermebritoandrade17@gmail.com" class="contact-card email">
-            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-            <div class="contact-info"><span class="contact-platform">E-mail</span><span class="contact-handle">guilhermebritoandrade17@gmail.com</span></div>
-            <i class="fas fa-external-link-alt contact-arrow"></i>
+          <a href="mailto:guilhermebritoandrade17@gmail.com" class="contact-card email" role="listitem" aria-label="E-mail: guilhermebritoandrade17@gmail.com">
+            <div class="contact-icon"><i class="fas fa-envelope" aria-hidden="true"></i></div>
+            <div class="contact-info">
+              <span class="contact-platform">E-mail</span>
+              <span class="contact-handle">guilhermebritoandrade17@gmail.com</span>
+            </div>
+            <i class="fas fa-arrow-up-right-from-square contact-arrow" aria-hidden="true"></i>
           </a>
-          <a href="https://github.com/guiandrade17" target="_blank" class="contact-card github">
-            <div class="contact-icon"><i class="fab fa-github"></i></div>
-            <div class="contact-info"><span class="contact-platform">GitHub</span><span class="contact-handle">guiandrade17</span></div>
-            <i class="fas fa-external-link-alt contact-arrow"></i>
+          <a href="https://github.com/guiandrade17" target="_blank" rel="noopener noreferrer" class="contact-card github" role="listitem" aria-label="GitHub: guiandrade17">
+            <div class="contact-icon"><i class="fab fa-github" aria-hidden="true"></i></div>
+            <div class="contact-info">
+              <span class="contact-platform">GitHub</span>
+              <span class="contact-handle">guiandrade17</span>
+            </div>
+            <i class="fas fa-arrow-up-right-from-square contact-arrow" aria-hidden="true"></i>
           </a>
-          <a href="https://wa.me/5561992689516?text=Olá%20Guilherme!%20Vi%20seu%20portfólio%20e%20gostaria%20de%20conversar." target="_blank" class="contact-card whatsapp">
-            <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
-            <div class="contact-info"><span class="contact-platform">WhatsApp</span><span class="contact-handle">(61) 99268-9516</span></div>
-            <i class="fas fa-external-link-alt contact-arrow"></i>
+          <a href="https://wa.me/5561992689516?text=Olá%20Guilherme!%20Vi%20seu%20portfólio%20e%20gostaria%20de%20conversar." target="_blank" rel="noopener noreferrer" class="contact-card whatsapp" role="listitem" aria-label="WhatsApp: (61) 99268-9516">
+            <div class="contact-icon"><i class="fab fa-whatsapp" aria-hidden="true"></i></div>
+            <div class="contact-info">
+              <span class="contact-platform">WhatsApp</span>
+              <span class="contact-handle">(61) 99268-9516</span>
+            </div>
+            <i class="fas fa-arrow-up-right-from-square contact-arrow" aria-hidden="true"></i>
           </a>
         </div>
       </div>
 
-      <div class="calendar-section reveal">
+      <!-- ===== CALENDÁRIO ===== -->
+      <div class="calendar-section reveal" aria-label="Agendar conversa">
         <div class="calendar-header">
           <div class="calendar-title-wrap">
-            <i class="fas fa-calendar-check calendar-icon-title"></i>
+            <div class="calendar-icon-title" aria-hidden="true"><i class="fas fa-calendar-check"></i></div>
             <div>
               <h3 class="calendar-title">Agende uma Conversa</h3>
-              <p class="calendar-subtitle">Disponível para entrevistas, estágios e projetos · 08h–18h</p>
+              <p class="calendar-subtitle">08h – 18h · Horário de Brasília</p>
             </div>
           </div>
-          <div class="calendar-legend">
+          <div class="calendar-legend" aria-hidden="true">
             <span class="legend-item"><span class="legend-dot available"></span>Disponível</span>
             <span class="legend-item"><span class="legend-dot selected"></span>Selecionado</span>
           </div>
         </div>
+
         <div class="calendar-body">
-          <div class="cal-month-nav">
-            <button class="cal-nav-btn" id="cal-prev"><i class="fas fa-chevron-left"></i></button>
-            <span class="cal-month-label" id="cal-month-label"></span>
-            <button class="cal-nav-btn" id="cal-next"><i class="fas fa-chevron-right"></i></button>
+          <div class="cal-month-nav" role="navigation" aria-label="Navegação de mês">
+            <button class="cal-nav-btn" id="cal-prev" aria-label="Mês anterior"><i class="fas fa-chevron-left" aria-hidden="true"></i></button>
+            <span class="cal-month-label" id="cal-month-label" aria-live="polite"></span>
+            <button class="cal-nav-btn" id="cal-next" aria-label="Próximo mês"><i class="fas fa-chevron-right" aria-hidden="true"></i></button>
           </div>
-          <div class="cal-weekdays">
+          <div class="cal-weekdays" aria-hidden="true">
             <span>Dom</span><span>Seg</span><span>Ter</span>
             <span>Qua</span><span>Qui</span><span>Sex</span><span>Sáb</span>
           </div>
-          <div class="cal-days" id="cal-days"></div>
+          <div class="cal-days" id="cal-days" role="grid" aria-label="Dias do mês"></div>
         </div>
-        <div class="cal-slots-wrap" id="cal-slots-wrap">
+
+        <div class="cal-slots-wrap" id="cal-slots-wrap" aria-live="polite">
           <p class="cal-slots-title" id="cal-slots-title"></p>
-          <div class="cal-slots" id="cal-slots"></div>
-          <div class="cal-confirm" id="cal-confirm" style="display:none;">
+          <div class="cal-slots" id="cal-slots" role="list" aria-label="Horários disponíveis"></div>
+          <div class="cal-confirm" id="cal-confirm" style="display:none;" role="region" aria-label="Confirmar agendamento">
             <div class="cal-confirm-info" id="cal-confirm-info"></div>
-            <a id="cal-whatsapp-btn" href="#" target="_blank" class="btn btn-primary cal-send-btn">
-              <i class="fab fa-whatsapp"></i> Confirmar via WhatsApp
+            <a id="cal-whatsapp-btn" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary cal-send-btn" aria-label="Confirmar agendamento via WhatsApp">
+              <i class="fab fa-whatsapp" aria-hidden="true"></i> Confirmar via WhatsApp
             </a>
           </div>
         </div>
@@ -320,21 +546,25 @@
     </div>
   </section>
 
+  <!-- ===== BOTÃO FLUTUANTE WHATSAPP ===== -->
   <a href="https://wa.me/5561992689516?text=Olá%20Guilherme!%20Vi%20seu%20portfólio%20e%20gostaria%20de%20conversar."
-     target="_blank" class="whatsapp-float" aria-label="Fale pelo WhatsApp">
-    <i class="fab fa-whatsapp"></i>
+     target="_blank" rel="noopener noreferrer"
+     class="whatsapp-float"
+     aria-label="Fale pelo WhatsApp com Guilherme Brito">
+    <i class="fab fa-whatsapp" aria-hidden="true"></i>
     <span class="whatsapp-float-label">WhatsApp</span>
   </a>
 
-  <footer id="footer">
+  <!-- ===== FOOTER ===== -->
+  <footer id="footer" role="contentinfo">
     <div class="footer-inner">
-      <div class="footer-logo">
-        <span class="logo-bracket">&lt;</span>GB<span class="logo-bracket">/&gt;</span>
+      <div class="footer-logo" aria-label="GB – Guilherme Brito">
+        <span class="logo-bracket" aria-hidden="true">&lt;</span>GB<span class="logo-bracket" aria-hidden="true">/&gt;</span>
       </div>
-      <p class="footer-text">Desenvolvido <span class="accent"></span> por Guilherme Brito · © 2026</p>
+      <p class="footer-text">Desenvolvido com <span class="accent" aria-label="amor">♥</span> por Guilherme Brito · © 2026</p>
       <p class="footer-sub">HTML · CSS · JavaScript · GitHub Pages</p>
     </div>
-    <div class="footer-glow"></div>
+    <div class="footer-glow" aria-hidden="true"></div>
   </footer>
 
   <script src="script.js"></script>
