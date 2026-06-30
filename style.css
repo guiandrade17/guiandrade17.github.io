@@ -535,7 +535,9 @@ section { padding: 100px 0; position: relative; z-index: 1; }
 .chip {
   display: inline-flex; align-items: center; gap: 0.45rem;
   padding: 0.38rem 0.9rem; border-radius: 999px;
-  background: var(--bg-card); border: 1px solid var(--border-dim);
+  background: var(--glass-bg); border: 1px solid var(--border-dim);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
   font-family: var(--font-mono); font-size: 0.76rem; color: var(--text-muted);
   transition: var(--transition);
 }
@@ -547,9 +549,11 @@ section { padding: 100px 0; position: relative; z-index: 1; }
 .sobre-right { display: flex; flex-direction: column; gap: 1.8rem; }
 .sobre-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
 .stat-card {
-  background: var(--bg-card); border: 1px solid var(--border-dim);
-  border-radius: var(--radius); padding: 1.4rem 1.2rem;
-  display: flex; flex-direction: column; gap: 0.25rem;
+  background: linear-gradient(160deg, var(--bg-card), var(--bg-card-2));
+  border: 1px solid var(--border-dim);
+  border-radius: var(--radius-lg); padding: 1.5rem 1.3rem;
+  display: flex; flex-direction: column; gap: 0.3rem;
+  box-shadow: var(--shadow-soft);
   transition: var(--transition-bounce); position: relative; overflow: hidden;
 }
 .stat-card::before {
@@ -563,7 +567,11 @@ section { padding: 100px 0; position: relative; z-index: 1; }
   box-shadow: var(--glow), var(--shadow);
 }
 .stat-card:hover::before { opacity: 1; }
-.stat-number { font-size: 2.2rem; font-weight: 800; line-height: 1; letter-spacing: -2px; }
+.stat-number {
+  font-size: 2.4rem; font-weight: 800; line-height: 1; letter-spacing: -2px;
+  background: linear-gradient(135deg, var(--text), var(--text-muted));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
 .stat-label  { font-family: var(--font-mono); font-size: 0.73rem; color: var(--text-muted); letter-spacing: 0.5px; }
 
 /* Timeline */
@@ -579,8 +587,11 @@ section { padding: 100px 0; position: relative; z-index: 1; }
 }
 .timeline-item {
   display: flex; gap: 1.2rem; align-items: flex-start;
-  padding-bottom: 1.4rem; position: relative;
+  padding: 0 0.6rem 1.4rem 0.3rem; margin-left: -0.3rem;
+  border-radius: var(--radius); position: relative;
+  transition: background var(--transition);
 }
+.timeline-item:hover { background: rgba(255, 255, 255, 0.02); }
 .timeline-item:last-child { padding-bottom: 0; }
 .tl-dot {
   width: 15px; height: 15px; border-radius: 50%; flex-shrink: 0;
