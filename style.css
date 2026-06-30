@@ -372,12 +372,13 @@ section { padding: 100px 0; position: relative; z-index: 1; }
 
 .home-greeting {
   font-family: var(--font-mono); font-size: 0.9rem;
-  color: var(--accent); letter-spacing: 1px; margin-bottom: 0.6rem;
+  color: var(--accent); letter-spacing: 1.5px; margin-bottom: 0.8rem;
+  opacity: 0.9;
 }
 .home-name {
-  font-size: clamp(3rem, 6vw, 5.5rem); font-weight: 800;
-  line-height: 1; letter-spacing: -3px;
-  margin-bottom: 1.2rem; position: relative; display: inline-block;
+  font-size: clamp(3.2rem, 6.5vw, 6rem); font-weight: 800;
+  line-height: 0.98; letter-spacing: -3.5px;
+  margin-bottom: 1.4rem; position: relative; display: inline-block;
 }
 .name-accent { position: relative; }
 .name-underline {
@@ -393,8 +394,9 @@ section { padding: 100px 0; position: relative; z-index: 1; }
 }
 
 .home-role {
-  font-family: var(--font-mono); font-size: 1.1rem;
-  color: var(--text-muted); margin-bottom: 1rem; min-height: 1.8rem;
+  font-family: var(--font-mono); font-size: 1.25rem;
+  color: var(--text); font-weight: 500;
+  margin-bottom: 1.3rem; min-height: 1.9rem;
 }
 .typing-prefix { color: var(--accent); }
 .cursor {
@@ -404,8 +406,8 @@ section { padding: 100px 0; position: relative; z-index: 1; }
 @keyframes cursor-blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
 
 .home-sub {
-  font-size: 1rem; color: var(--text-muted);
-  margin-bottom: 1.5rem; line-height: 1.8; max-width: 480px;
+  font-size: 1.02rem; color: var(--text-muted);
+  margin-bottom: 1.7rem; line-height: 1.85; max-width: 500px;
 }
 
 /* Metadados rápidos */
