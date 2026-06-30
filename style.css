@@ -736,6 +736,9 @@ section { padding: 100px 0; position: relative; z-index: 1; }
 .card-glow--sql  { background: radial-gradient(circle, rgba(0, 117, 143, 0.3), transparent); }
 .card-glow--py   { background: radial-gradient(circle, rgba(55, 118, 171, 0.3), transparent); }
 .card-glow--fe   { background: radial-gradient(circle, rgba(240, 219, 79, 0.25), transparent); }
+.card-glow--cyber { background: radial-gradient(circle, rgba(123, 94, 167, 0.3), transparent); }
+.card-glow--study { background: radial-gradient(circle, rgba(74, 222, 128, 0.25), transparent); }
+.card-glow--cafe  { background: radial-gradient(circle, rgba(217, 119, 6, 0.3), transparent); }
 .project-card:hover .card-glow { opacity: 1; }
 
 /* Card featured */
@@ -766,6 +769,9 @@ section { padding: 100px 0; position: relative; z-index: 1; }
 .db-icon   { background: rgba(0, 117, 143, 0.12);  color: #00c8ef; }
 .py-icon   { background: rgba(55, 118, 171, 0.12); color: #3776ab; }
 .fe-icon   { background: rgba(240, 219, 79, 0.12); color: #f0db4f; }
+.cyber-icon { background: rgba(123, 94, 167, 0.12); color: #a48bd4; }
+.study-icon { background: rgba(74, 222, 128, 0.12);  color: #4ade80; }
+.cafe-icon  { background: rgba(217, 119, 6, 0.12);   color: #e8920a; }
 
 .card-links { display: flex; gap: 0.6rem; }
 .card-links a {
@@ -797,6 +803,7 @@ section { padding: 100px 0; position: relative; z-index: 1; }
 .html-tag   { border-color: rgba(228, 77, 38, 0.35);  color: #e44d26; }
 .css-tag    { border-color: rgba(38, 77, 228, 0.35);  color: #7090f0; }
 .js-tag     { border-color: rgba(240, 219, 79, 0.35); color: #f0db4f; }
+.vue-tag    { border-color: rgba(65, 184, 131, 0.35);  color: #41b883; }
 
 .card-btn {
   display: inline-flex; align-items: center; gap: 0.4rem;
