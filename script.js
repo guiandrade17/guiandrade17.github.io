@@ -177,6 +177,7 @@ window.addEventListener('load', () => {
 
   const phrases = [
     'Estudante de Eng. Software',
+    'Desenvolvedor Full Stack',
     'Front-end Developer',
     'Apaixonado por código',
     'Futuro Engenheiro',
