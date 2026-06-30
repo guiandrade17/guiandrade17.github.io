@@ -21,7 +21,7 @@
   /* Texto */
   --text:       #e8edf5;
   --text-muted: #7a8ba8;
-  --text-dim:   #3d5068;
+  --text-dim:   #637a98;
 
   /* Bordas */
   --border:     rgba(0, 245, 200, 0.18);
@@ -194,7 +194,7 @@ img { display: block; max-width: 100%; }
 
 .hamburger {
   display: none; flex-direction: column; gap: 5px;
-  background: none; border: none; cursor: pointer; padding: 6px;
+  background: none; border: none; cursor: pointer; padding: 11px;
   border-radius: 8px; transition: background var(--transition);
 }
 .hamburger:hover { background: var(--accent-dim); }
@@ -1122,6 +1122,7 @@ section { padding: 100px 0; position: relative; z-index: 1; }
   .home-content { flex-direction: column; text-align: center; gap: 2.5rem; }
   .home-cta     { justify-content: center; }
   .home-meta    { justify-content: center; }
+  .home-stack   { justify-content: center; }
   .home-sub     { margin: 0 auto 1.5rem; }
   .sobre-grid   { grid-template-columns: 1fr; gap: 2.5rem; }
   .tech-grid    { grid-template-columns: repeat(2, 1fr); }
@@ -1181,4 +1182,19 @@ section { padding: 100px 0; position: relative; z-index: 1; }
 @media (max-width: 400px) {
   .home-cta { flex-direction: column; align-items: center; }
   .btn { width: 100%; justify-content: center; }
+}
+
+/* ─── ACESSIBILIDADE: MOVIMENTO REDUZIDO ──────────────────── */
+/* Respeita a preferência do sistema operacional do usuário.
+   Não altera nenhuma classe usada pelo JS — apenas neutraliza
+   transições/animações via CSS quando o usuário pede menos movimento. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal { opacity: 1; transform: none; }
+  #particles-canvas { opacity: 0.15; }
 }
