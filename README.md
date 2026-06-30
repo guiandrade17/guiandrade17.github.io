@@ -44,6 +44,14 @@ O site foi projetado com foco em **experiência visual imersiva**, combinando um
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![Vue.js](https://img.shields.io/badge/Vue.js-4FC08D?style=for-the-badge&logo=vuedotjs&logoColor=white)
+
+### 🛠️ Back-end & Linguagens
+
+![Java](https://img.shields.io/badge/Java-F0641E?style=for-the-badge&logo=openjdk&logoColor=white)
+![Spring Boot](https://img.shields.io/badge/Spring%20Boot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white)
+![C#](https://img.shields.io/badge/C%23-68217A?style=for-the-badge&logo=csharp&logoColor=white)
+![SQL](https://img.shields.io/badge/SQL-00758F?style=for-the-badge&logo=mysql&logoColor=white)
 
 ### ⚙️ APIs & Ferramentas
 
@@ -64,15 +72,17 @@ O site foi projetado com foco em **experiência visual imersiva**, combinando um
 | Feature | Descrição |
 |---|---|
 | 🌑 **Tema Dark Tech** | Paleta neon com cores `#00f5c8` e `#7b5ea7` sobre fundo escuro `#060811` |
+| 🪟 **Glassmorphism Pontual** | Navbar, badges e painéis com `backdrop-filter` aplicado onde faz sentido visualmente |
 | ✨ **Partículas Interativas** | Canvas API com partículas conectadas animadas em tempo real |
 | ⌨️ **Efeito de Digitação** | Texto animado com frases rotativas na seção Home |
 | 👁️ **Scroll Reveal** | Elementos aparecem suavemente com Intersection Observer |
 | 📊 **Barras de Skill** | Animação das barras de progresso ao entrar na viewport |
 | 📅 **Calendário de Agendamento** | Selecione data e horário e confirme via WhatsApp automaticamente |
 | 💬 **WhatsApp Integrado** | Botão flutuante e link direto para conversa |
-| 📱 **100% Responsivo** | Layout adaptado para mobile, tablet e desktop |
+| 📱 **100% Responsivo** | Layout fluido adaptado para mobile, tablet e desktop |
 | 🔄 **Loader Animado** | Tela de carregamento com anéis rotativos |
 | 🧭 **Navbar Inteligente** | Fixa com highlight automático da seção ativa |
+| ♿ **Acessibilidade** | Contraste WCAG AA, foco visível, áreas de toque adequadas e suporte a `prefers-reduced-motion` |
 
 ---
 
@@ -93,10 +103,10 @@ guiandrade17.github.io/
 ## `< seções do site />`
 
 ```
-🏠  Home          →  Apresentação com foto, nome e links principais
+🏠  Home          →  Apresentação com foto, nome, stack em destaque e links principais
 👤  Sobre Mim     →  Trajetória, objetivos e estatísticas
-🧰  Tech Stack    →  8 tecnologias com ícones e barras de progresso
-📂  Projetos      →  5 cards de projetos com links para o GitHub
+🧰  Tech Stack    →  10 tecnologias com ícones e barras de progresso
+📂  Projetos      →  8 cards de projetos com links para o GitHub
 📬  Contato       →  5 canais de contato + Calendário de agendamento
 ```
 
@@ -144,6 +154,29 @@ guiandrade17.github.io/
       </a>
     </td>
     <td align="center" width="200">
+      <strong>🕹️ CYBER RUNNER</strong><br/>
+      <sub>Endless runner cyberpunk<br/>Canvas API + Web Audio API</sub><br/><br/>
+      <a href="https://github.com/guiandrade17/Cyber-runner">
+        <img src="https://img.shields.io/badge/Ver%20Repo-00f5c8?style=flat-square&logo=github&logoColor=black"/>
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="200">
+      <strong>⏱️ STUDYFLOW</strong><br/>
+      <sub>Produtividade para estudantes<br/>Pomodoro + Estatísticas</sub><br/><br/>
+      <a href="https://github.com/guiandrade17/StudyFlow">
+        <img src="https://img.shields.io/badge/Ver%20Repo-00f5c8?style=flat-square&logo=github&logoColor=black"/>
+      </a>
+    </td>
+    <td align="center" width="200">
+      <strong>☕ CAFÉ DOIS DEDIM</strong><br/>
+      <sub>Cardápio com tema futebolístico<br/>Vue 3 + Vue Router</sub><br/><br/>
+      <a href="https://github.com/guiandrade17/cafe-dois-dedin">
+        <img src="https://img.shields.io/badge/Ver%20Repo-00f5c8?style=flat-square&logo=github&logoColor=black"/>
+      </a>
+    </td>
+    <td align="center" width="200">
       <strong>🌐 PORTFÓLIO</strong><br/>
       <sub>Este projeto<br/>Dark Tech + Neon</sub><br/><br/>
       <a href="https://guiandrade17.github.io/">
@@ -178,9 +211,9 @@ cd guiandrade17.github.io
 ```javascript
 const guilherme = {
   objetivo:    "Tornar-me Engenheiro de Software completo",
-  foco:        ["Front-end", "Back-end", "Banco de Dados"],
+  foco:        ["Front-end", "Back-end", "Banco de Dados", "Vue.js"],
   open_to:     "Estágios & projetos colaborativos",
-  aprendendo:  ["React", "Node.js", "APIs REST"],
+  aprendendo:  ["React", "Node.js", "Spring Boot", "APIs REST"],
   localização: "Brasília, DF 🇧🇷"
 };
 ```
