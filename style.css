@@ -835,9 +835,11 @@ section { padding: 100px 0; position: relative; z-index: 1; }
 
 /* Bloco de código aprimorado */
 .contato-code {
-  background: var(--bg-card); border: 1px solid var(--border-dim);
+  background: linear-gradient(160deg, var(--bg-card), var(--bg-card-2));
+  border: 1px solid var(--border-dim);
   border-radius: var(--radius-lg); overflow: hidden;
   font-family: var(--font-mono);
+  box-shadow: var(--shadow-soft);
 }
 .code-topbar {
   display: flex; align-items: center; gap: 0.5rem;
@@ -874,7 +876,9 @@ section { padding: 100px 0; position: relative; z-index: 1; }
 .contact-card {
   display: flex; align-items: center; gap: 1rem;
   padding: 1rem 1.2rem; border-radius: var(--radius);
-  border: 1px solid var(--border-dim); background: var(--bg-card);
+  border: 1px solid var(--border-dim);
+  background: linear-gradient(160deg, var(--bg-card), var(--bg-card-2));
+  box-shadow: var(--shadow-soft);
   transition: transform var(--transition), border-color var(--transition),
               box-shadow var(--transition), background var(--transition);
   position: relative; overflow: hidden;
@@ -926,6 +930,7 @@ section { padding: 100px 0; position: relative; z-index: 1; }
   margin-top: 4.5rem;
   background: var(--bg-card); border: 1px solid var(--border-dim);
   border-radius: var(--radius-xl); overflow: hidden;
+  box-shadow: var(--shadow-soft);
   max-width: 680px; /* Tamanho reduzido */
 }
 
@@ -1051,7 +1056,9 @@ section { padding: 100px 0; position: relative; z-index: 1; }
 .cal-confirm {
   display: flex; align-items: center; justify-content: space-between;
   flex-wrap: wrap; gap: 0.9rem;
-  background: rgba(0, 245, 200, 0.04);
+  background: var(--accent-dim);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
   border: 1px solid rgba(0, 245, 200, 0.15);
   border-radius: var(--radius); padding: 1rem 1.3rem;
   animation: fade-up 0.3s ease;
